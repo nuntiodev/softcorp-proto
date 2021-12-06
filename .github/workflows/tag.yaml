@@ -72,9 +72,6 @@ jobs:
       - name: Git commit
         run: git commit -am "updated protobuf files"
 
-      - name: Set git branch
-        run: git branch -M main
-
       - name: Git push
         run: git  push -u origin main
 
