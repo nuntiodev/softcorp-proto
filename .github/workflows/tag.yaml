@@ -56,24 +56,8 @@ jobs:
       - name: Build softcorp.proto
         run: make build-proto
 
-      # Commit and push to git
-      - name: Add all new files
-        run: git add --all
-
-      - name: Check status
-        run: git status
-
-      - name: Set github name and email
-        run: git config --global user.email "oscar@softcorp.io" && git config --global user.name "Oscar A. B. Orellana"
-
-      - name: Add git credentials
-        run: git remote set-url --push origin https://softcorp-admin:$GITHUB_TOKEN@github.com/softcorp-io/softcorp-proto
-
-      - name: Git commit
-        run: git commit -am "updated protobuf files"
-
-      - name: Git push
-        run: git  push -u origin
+      - name: test
+        run: echo "test" > log.yaml
 
       # Push to pubdev
       - name: Get tag
