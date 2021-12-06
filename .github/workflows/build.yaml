@@ -1,0 +1,22 @@
+name: Build, Test and Deploy
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - "*"
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Publish
+        uses: sakebook/actions-flutter-pub-publisher@v1.3.1
+        with:
+          credential: ${{ secrets.PUB_DEV_CREDENTIAL_JSON }}
+          flutter_package: true # Publish packages type
+          skip_test: false # Skip test
+          dry_run: false # Dry run, no publish
