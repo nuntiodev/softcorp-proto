@@ -57,7 +57,7 @@ jobs:
         run: make build-proto
 
       # Commit and push to git
-      - name: add all new files
+      - name: Add all new files
         run: git add --all
 
       - name: Check status
@@ -66,14 +66,17 @@ jobs:
       - name: Set github name and email
         run: git config --global user.email "oscar@softcorp.io" && git config --global user.name "Oscar A. B. Orellana"
 
-      - name: add git credentials
+      - name: Add git credentials
         run: git remote set-url --push origin https://softcorp-admin:$GITHUB_TOKEN@github.com/softcorp-io/softcorp-proto
 
-      - name: git commit
+      - name: Git commit
         run: git commit -am "updated protobuf files"
 
-      - name: git push
-        run: git push
+      - name: Set git branch
+        run: git branch -M main
+
+      - name: Git push
+        run: git  push -u origin main
 
       # Push to pubdev
       - name: Get tag
