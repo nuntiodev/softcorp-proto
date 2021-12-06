@@ -73,7 +73,7 @@ jobs:
         run: git commit -am "updated protobuf files"
 
       - name: Git push
-        run: git  push -u origin main
+        run: git  push -u origin
 
       # Push to pubdev
       - name: Get tag
