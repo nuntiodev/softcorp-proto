@@ -63,11 +63,11 @@ jobs:
       - name: Check status
         run: git status
 
-      - name: git commit
-        run: git commit -am "updated protobuf files"
-
       - name: add git credentials
         run: git remote set-url --push origin https://softcorp-admin:$GITHUB_TOKEN@github.com/softcorp-io/softcorp-proto
+
+      - name: git commit
+        run: git commit -am "updated protobuf files"
 
       - name: git push
         run: git push
