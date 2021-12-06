@@ -13,6 +13,49 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
+      # Install protobuf
+      - name: Download protobuf
+        run: wget -P https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protoc-3.19.1-linux-x86_64.zip
+
+      - name: Unpack protobuf
+        run: tar -xzf protoc-3.19.1-linux-x86_64.zip
+
+      - name: Install protobuf
+        run: cd otoc-3.19.1-linux-x86_64/ && ./configure && make && sudo make install
+
+      - name: Validate protoc is installed correctly
+        run: protoc --version
+      # Install protoc-gen-go
+      - uses: actions/setup-go@v2
+        with:
+          go-version: "^1.17.4" # The Go version to download (if necessary) and use.
+
+      - name: Validate golang is installed correctly
+        run: go version
+
+      - name: Install protoc-gen-go
+        run: go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.26 && go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1 && export PATH="$PATH:$(go env GOPATH)/bin"
+
+      - name: Validate protoc-gen-go is installed correctly
+        run: protoc-gen-go --version
+
+      # Install protoc-gen-dart
+      - name: Install dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: Validate dart is installed correctly
+        run: dart --version
+
+      - name: Install protoc-dart-gen
+        run: dart pub global activate protoc_plugin
+
+      # Build and push internal proto files
+      - name: Build softcorp.proto
+        run: make build-proto
+
+      - name: Check status
+        run: git status
+
       - name: Get tag
         id: tag
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
