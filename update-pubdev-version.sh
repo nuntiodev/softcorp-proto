@@ -25,3 +25,6 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 flutter:
 EOT
+
+echo "\n\n## $TAG_NAME" >> ./dart_softcorp/CHANGELOG.md
+echo "\n- New version." >> ./dart_softcorp/CHANGELOG.md
