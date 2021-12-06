@@ -225,6 +225,7 @@ enum LanguageCodeType {
     INVALID_LANGUAGE = 0 ;
     LANGUAGE_DK = 1;
     LANGUAGE_EN = 2;
+    LANGUAGE_DE = 3;
 }
 
 message LanguageCode {

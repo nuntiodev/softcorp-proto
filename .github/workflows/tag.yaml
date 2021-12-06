@@ -5,6 +5,9 @@ on:
     tags:
       - "*"
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
@@ -49,13 +52,27 @@ jobs:
       - name: Install protoc-dart-gen
         run: dart pub global activate protoc_plugin
 
-      # Build and push internal proto files
+      # Build internal proto files
       - name: Build softcorp.proto
         run: make build-proto
+
+      # Commit and push to git
+      - name: add all new files
+        run: git add --all
 
       - name: Check status
         run: git status
 
+      - name: git commit
+        run: git commit -am "updated protobuf files"
+
+      - name: add git credentials
+        run: git remote set-url --push origin https://softcorp-admin:$GITHUB_TOKEN@github.com/softcorp-io/softcorp-proto
+
+      - name: git push
+        run: git push
+
+      # Push to pubdev
       - name: Get tag
         id: tag
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
