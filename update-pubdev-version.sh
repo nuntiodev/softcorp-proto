@@ -4,7 +4,7 @@ if [ -z $TAG_NAME ]; then
   echo "TAG_NAME variable not set."
   exit 1
 fi
-rm ./dart_softcorp/pubspec.yaml
+rm ./dart_softcorp/pubspec.yaml || true
 cat <<EOT >> ./dart_softcorp/pubspec.yaml
 name: dart_softcorp
 description: Dart Proto files for internal Softcorp Projects
