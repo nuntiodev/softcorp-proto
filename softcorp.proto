@@ -48,7 +48,7 @@ service UserAdminService {
     rpc GetBulkUsersByEmail(AdminUserRequest) returns (AdminUserResponse) {}
 }
 
-service NuntioPublicCollaborationService{
+service CollaborationPublicService{
         rpc Ping(Request) returns (Response) {}
 }
 

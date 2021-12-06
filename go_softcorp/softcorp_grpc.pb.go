@@ -1286,84 +1286,84 @@ var UserAdminService_ServiceDesc = grpc.ServiceDesc{
 	Metadata: "softcorp.proto",
 }
 
-// NuntioPublicCollaborationServiceClient is the client API for NuntioPublicCollaborationService service.
+// CollaborationPublicServiceClient is the client API for CollaborationPublicService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type NuntioPublicCollaborationServiceClient interface {
+type CollaborationPublicServiceClient interface {
 	Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 }
 
-type nuntioPublicCollaborationServiceClient struct {
+type collaborationPublicServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewNuntioPublicCollaborationServiceClient(cc grpc.ClientConnInterface) NuntioPublicCollaborationServiceClient {
-	return &nuntioPublicCollaborationServiceClient{cc}
+func NewCollaborationPublicServiceClient(cc grpc.ClientConnInterface) CollaborationPublicServiceClient {
+	return &collaborationPublicServiceClient{cc}
 }
 
-func (c *nuntioPublicCollaborationServiceClient) Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *collaborationPublicServiceClient) Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
-	err := c.cc.Invoke(ctx, "/Softcorp.NuntioPublicCollaborationService/Ping", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Softcorp.CollaborationPublicService/Ping", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// NuntioPublicCollaborationServiceServer is the server API for NuntioPublicCollaborationService service.
-// All implementations should embed UnimplementedNuntioPublicCollaborationServiceServer
+// CollaborationPublicServiceServer is the server API for CollaborationPublicService service.
+// All implementations should embed UnimplementedCollaborationPublicServiceServer
 // for forward compatibility
-type NuntioPublicCollaborationServiceServer interface {
+type CollaborationPublicServiceServer interface {
 	Ping(context.Context, *Request) (*Response, error)
 }
 
-// UnimplementedNuntioPublicCollaborationServiceServer should be embedded to have forward compatible implementations.
-type UnimplementedNuntioPublicCollaborationServiceServer struct {
+// UnimplementedCollaborationPublicServiceServer should be embedded to have forward compatible implementations.
+type UnimplementedCollaborationPublicServiceServer struct {
 }
 
-func (UnimplementedNuntioPublicCollaborationServiceServer) Ping(context.Context, *Request) (*Response, error) {
+func (UnimplementedCollaborationPublicServiceServer) Ping(context.Context, *Request) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
 }
 
-// UnsafeNuntioPublicCollaborationServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to NuntioPublicCollaborationServiceServer will
+// UnsafeCollaborationPublicServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to CollaborationPublicServiceServer will
 // result in compilation errors.
-type UnsafeNuntioPublicCollaborationServiceServer interface {
-	mustEmbedUnimplementedNuntioPublicCollaborationServiceServer()
+type UnsafeCollaborationPublicServiceServer interface {
+	mustEmbedUnimplementedCollaborationPublicServiceServer()
 }
 
-func RegisterNuntioPublicCollaborationServiceServer(s grpc.ServiceRegistrar, srv NuntioPublicCollaborationServiceServer) {
-	s.RegisterService(&NuntioPublicCollaborationService_ServiceDesc, srv)
+func RegisterCollaborationPublicServiceServer(s grpc.ServiceRegistrar, srv CollaborationPublicServiceServer) {
+	s.RegisterService(&CollaborationPublicService_ServiceDesc, srv)
 }
 
-func _NuntioPublicCollaborationService_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CollaborationPublicService_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NuntioPublicCollaborationServiceServer).Ping(ctx, in)
+		return srv.(CollaborationPublicServiceServer).Ping(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Softcorp.NuntioPublicCollaborationService/Ping",
+		FullMethod: "/Softcorp.CollaborationPublicService/Ping",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NuntioPublicCollaborationServiceServer).Ping(ctx, req.(*Request))
+		return srv.(CollaborationPublicServiceServer).Ping(ctx, req.(*Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// NuntioPublicCollaborationService_ServiceDesc is the grpc.ServiceDesc for NuntioPublicCollaborationService service.
+// CollaborationPublicService_ServiceDesc is the grpc.ServiceDesc for CollaborationPublicService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var NuntioPublicCollaborationService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "Softcorp.NuntioPublicCollaborationService",
-	HandlerType: (*NuntioPublicCollaborationServiceServer)(nil),
+var CollaborationPublicService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "Softcorp.CollaborationPublicService",
+	HandlerType: (*CollaborationPublicServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Ping",
-			Handler:    _NuntioPublicCollaborationService_Ping_Handler,
+			Handler:    _CollaborationPublicService_Ping_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -875,13 +875,13 @@ abstract class UserAdminServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.AdminUserRequest request);
 }
 
-class NuntioPublicCollaborationServiceClient extends $grpc.Client {
+class CollaborationPublicServiceClient extends $grpc.Client {
   static final _$ping = $grpc.ClientMethod<$0.Request, $0.Response>(
-      '/Softcorp.NuntioPublicCollaborationService/Ping',
+      '/Softcorp.CollaborationPublicService/Ping',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
 
-  NuntioPublicCollaborationServiceClient($grpc.ClientChannel channel,
+  CollaborationPublicServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
@@ -892,10 +892,10 @@ class NuntioPublicCollaborationServiceClient extends $grpc.Client {
   }
 }
 
-abstract class NuntioPublicCollaborationServiceBase extends $grpc.Service {
-  $core.String get $name => 'Softcorp.NuntioPublicCollaborationService';
+abstract class CollaborationPublicServiceBase extends $grpc.Service {
+  $core.String get $name => 'Softcorp.CollaborationPublicService';
 
-  NuntioPublicCollaborationServiceBase() {
+  CollaborationPublicServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.Request, $0.Response>(
         'Ping',
         ping_Pre,

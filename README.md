@@ -1,2 +1,2 @@
-# Nuntio Proto
-This project contains protobuf files used in the *Nuntio* project.
+# Softcorp Proto
+This project contains protobuf files used in the *Softcorp* projects.
