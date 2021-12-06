@@ -25,4 +25,5 @@ jobs:
         with:
           credential: ${{ secrets.PUB_DEV_CREDENTIAL_JSON }}
           skip_test: true
+          flutter_package: false
           package_directory: ./dart_softcorp
