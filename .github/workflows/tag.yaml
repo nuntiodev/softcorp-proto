@@ -22,9 +22,9 @@ jobs:
 
       - name: Publish
         uses: sakebook/actions-flutter-pub-publisher@v1.3.1
-        working-directory: ./dart_softcorp
         with:
           credential: ${{ secrets.PUB_DEV_CREDENTIAL_JSON }}
           flutter_package: true # Publish packages type
           skip_test: false # Skip test
           dry_run: false # Dry run, no publish
+          package_directory: ./dart_softcorp
