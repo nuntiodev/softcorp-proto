@@ -170,11 +170,13 @@ class LanguageCodeType extends $pb.ProtobufEnum {
   static const LanguageCodeType INVALID_LANGUAGE = LanguageCodeType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INVALID_LANGUAGE');
   static const LanguageCodeType LANGUAGE_DK = LanguageCodeType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LANGUAGE_DK');
   static const LanguageCodeType LANGUAGE_EN = LanguageCodeType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LANGUAGE_EN');
+  static const LanguageCodeType LANGUAGE_DE = LanguageCodeType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LANGUAGE_DE');
 
   static const $core.List<LanguageCodeType> values = <LanguageCodeType> [
     INVALID_LANGUAGE,
     LANGUAGE_DK,
     LANGUAGE_EN,
+    LANGUAGE_DE,
   ];
 
   static final $core.Map<$core.int, LanguageCodeType> _byValue = $pb.ProtobufEnum.initByValue(values);

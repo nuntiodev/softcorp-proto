@@ -118,11 +118,12 @@ const LanguageCodeType$json = const {
     const {'1': 'INVALID_LANGUAGE', '2': 0},
     const {'1': 'LANGUAGE_DK', '2': 1},
     const {'1': 'LANGUAGE_EN', '2': 2},
+    const {'1': 'LANGUAGE_DE', '2': 3},
   ],
 };
 
 /// Descriptor for `LanguageCodeType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List languageCodeTypeDescriptor = $convert.base64Decode('ChBMYW5ndWFnZUNvZGVUeXBlEhQKEElOVkFMSURfTEFOR1VBR0UQABIPCgtMQU5HVUFHRV9ESxABEg8KC0xBTkdVQUdFX0VOEAI=');
+final $typed_data.Uint8List languageCodeTypeDescriptor = $convert.base64Decode('ChBMYW5ndWFnZUNvZGVUeXBlEhQKEElOVkFMSURfTEFOR1VBR0UQABIPCgtMQU5HVUFHRV9ESxABEg8KC0xBTkdVQUdFX0VOEAISDwoLTEFOR1VBR0VfREUQAw==');
 @$core.Deprecated('Use countryCodeTypeDescriptor instead')
 const CountryCodeType$json = const {
   '1': 'CountryCodeType',
