@@ -86,6 +86,20 @@ const CollaborationType$json = const {
 
 /// Descriptor for `CollaborationType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List collaborationTypeDescriptor = $convert.base64Decode('ChFDb2xsYWJvcmF0aW9uVHlwZRIZChVJTlZBTElEX0NPTExBQk9SQVRJT04QABIeChpPUkdBTklaQVRJT05fQ09MTEFCT1JBVElPThABEhkKFUNPTk5FQ1RfQ09MTEFCT1JBVElPThAC');
+@$core.Deprecated('Use collaborationRoleDescriptor instead')
+const CollaborationRole$json = const {
+  '1': 'CollaborationRole',
+  '2': const [
+    const {'1': 'INVALID_COLLABORATION_ROLE', '2': 0},
+    const {'1': 'OWNER', '2': 1},
+    const {'1': 'VIEWER', '2': 2},
+    const {'1': 'EDITOR', '2': 3},
+    const {'1': 'ADMIN', '2': 4},
+  ],
+};
+
+/// Descriptor for `CollaborationRole`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List collaborationRoleDescriptor = $convert.base64Decode('ChFDb2xsYWJvcmF0aW9uUm9sZRIeChpJTlZBTElEX0NPTExBQk9SQVRJT05fUk9MRRAAEgkKBU9XTkVSEAESCgoGVklFV0VSEAISCgoGRURJVE9SEAMSCQoFQURNSU4QBA==');
 @$core.Deprecated('Use grantTypeDescriptor instead')
 const GrantType$json = const {
   '1': 'GrantType',
@@ -198,13 +212,14 @@ const Collaboration$json = const {
     const {'1': 'collaborationType', '3': 4, '4': 1, '5': 14, '6': '.Softcorp.CollaborationType', '10': 'collaborationType'},
     const {'1': 'accepted', '3': 5, '4': 1, '5': 8, '10': 'accepted'},
     const {'1': 'hashedCode', '3': 6, '4': 1, '5': 9, '10': 'hashedCode'},
-    const {'1': 'createdAt', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updatedAt', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'role', '3': 7, '4': 1, '5': 14, '6': '.Softcorp.CollaborationRole', '10': 'role'},
+    const {'1': 'createdAt', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updatedAt', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `Collaboration`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List collaborationDescriptor = $convert.base64Decode('Cg1Db2xsYWJvcmF0aW9uEg4KAmlkGAEgASgJUgJpZBIWCgZ1c2VySWQYAiABKAlSBnVzZXJJZBIaCghvYmplY3RJZBgDIAEoCVIIb2JqZWN0SWQSSQoRY29sbGFib3JhdGlvblR5cGUYBCABKA4yGy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uVHlwZVIRY29sbGFib3JhdGlvblR5cGUSGgoIYWNjZXB0ZWQYBSABKAhSCGFjY2VwdGVkEh4KCmhhc2hlZENvZGUYBiABKAlSCmhhc2hlZENvZGUSOAoJY3JlYXRlZEF0GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjgKCXVwZGF0ZWRBdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+final $typed_data.Uint8List collaborationDescriptor = $convert.base64Decode('Cg1Db2xsYWJvcmF0aW9uEg4KAmlkGAEgASgJUgJpZBIWCgZ1c2VySWQYAiABKAlSBnVzZXJJZBIaCghvYmplY3RJZBgDIAEoCVIIb2JqZWN0SWQSSQoRY29sbGFib3JhdGlvblR5cGUYBCABKA4yGy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uVHlwZVIRY29sbGFib3JhdGlvblR5cGUSGgoIYWNjZXB0ZWQYBSABKAhSCGFjY2VwdGVkEh4KCmhhc2hlZENvZGUYBiABKAlSCmhhc2hlZENvZGUSLwoEcm9sZRgHIAEoDjIbLlNvZnRjb3JwLkNvbGxhYm9yYXRpb25Sb2xlUgRyb2xlEjgKCWNyZWF0ZWRBdBgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI4Cgl1cGRhdGVkQXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
 @$core.Deprecated('Use organizationDescriptor instead')
 const Organization$json = const {
   '1': 'Organization',

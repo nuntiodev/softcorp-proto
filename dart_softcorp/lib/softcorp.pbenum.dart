@@ -130,6 +130,27 @@ class CollaborationType extends $pb.ProtobufEnum {
   const CollaborationType._($core.int v, $core.String n) : super(v, n);
 }
 
+class CollaborationRole extends $pb.ProtobufEnum {
+  static const CollaborationRole INVALID_COLLABORATION_ROLE = CollaborationRole._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INVALID_COLLABORATION_ROLE');
+  static const CollaborationRole OWNER = CollaborationRole._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'OWNER');
+  static const CollaborationRole VIEWER = CollaborationRole._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'VIEWER');
+  static const CollaborationRole EDITOR = CollaborationRole._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EDITOR');
+  static const CollaborationRole ADMIN = CollaborationRole._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ADMIN');
+
+  static const $core.List<CollaborationRole> values = <CollaborationRole> [
+    INVALID_COLLABORATION_ROLE,
+    OWNER,
+    VIEWER,
+    EDITOR,
+    ADMIN,
+  ];
+
+  static final $core.Map<$core.int, CollaborationRole> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static CollaborationRole? valueOf($core.int value) => _byValue[value];
+
+  const CollaborationRole._($core.int v, $core.String n) : super(v, n);
+}
+
 class GrantType extends $pb.ProtobufEnum {
   static const GrantType INVALID_GRANT = GrantType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INVALID_GRANT');
   static const GrantType AUTH_GRANT = GrantType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'AUTH_GRANT');
