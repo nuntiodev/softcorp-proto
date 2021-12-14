@@ -54,6 +54,7 @@ service CollaborationPublicService{
 
 service CollaborationAdminService {
     rpc Ping(Request) returns (Response) {}
+    rpc InitCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
     rpc CreateCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
     rpc GetCollaborationById(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
     rpc GetCollaborationsByObjectId(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}

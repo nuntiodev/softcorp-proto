@@ -1375,6 +1375,7 @@ var CollaborationPublicService_ServiceDesc = grpc.ServiceDesc{
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CollaborationAdminServiceClient interface {
 	Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	InitCollaboration(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
 	CreateCollaboration(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
 	GetCollaborationById(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
 	GetCollaborationsByObjectId(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
@@ -1397,6 +1398,15 @@ func NewCollaborationAdminServiceClient(cc grpc.ClientConnInterface) Collaborati
 func (c *collaborationAdminServiceClient) Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
 	err := c.cc.Invoke(ctx, "/Softcorp.CollaborationAdminService/Ping", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *collaborationAdminServiceClient) InitCollaboration(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error) {
+	out := new(AdminCollaborationResponse)
+	err := c.cc.Invoke(ctx, "/Softcorp.CollaborationAdminService/InitCollaboration", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1489,6 +1499,7 @@ func (c *collaborationAdminServiceClient) DeleteUserCollaborations(ctx context.C
 // for forward compatibility
 type CollaborationAdminServiceServer interface {
 	Ping(context.Context, *Request) (*Response, error)
+	InitCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
 	CreateCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
 	GetCollaborationById(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
 	GetCollaborationsByObjectId(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
@@ -1506,6 +1517,9 @@ type UnimplementedCollaborationAdminServiceServer struct {
 
 func (UnimplementedCollaborationAdminServiceServer) Ping(context.Context, *Request) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
+}
+func (UnimplementedCollaborationAdminServiceServer) InitCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method InitCollaboration not implemented")
 }
 func (UnimplementedCollaborationAdminServiceServer) CreateCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateCollaboration not implemented")
@@ -1560,6 +1574,24 @@ func _CollaborationAdminService_Ping_Handler(srv interface{}, ctx context.Contex
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CollaborationAdminServiceServer).Ping(ctx, req.(*Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CollaborationAdminService_InitCollaboration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminCollaborationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CollaborationAdminServiceServer).InitCollaboration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Softcorp.CollaborationAdminService/InitCollaboration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CollaborationAdminServiceServer).InitCollaboration(ctx, req.(*AdminCollaborationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1736,6 +1768,10 @@ var CollaborationAdminService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Ping",
 			Handler:    _CollaborationAdminService_Ping_Handler,
+		},
+		{
+			MethodName: "InitCollaboration",
+			Handler:    _CollaborationAdminService_InitCollaboration_Handler,
 		},
 		{
 			MethodName: "CreateCollaboration",

@@ -918,6 +918,12 @@ class CollaborationAdminServiceClient extends $grpc.Client {
       '/Softcorp.CollaborationAdminService/Ping',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
+  static final _$initCollaboration = $grpc.ClientMethod<
+          $0.AdminCollaborationRequest, $0.AdminCollaborationResponse>(
+      '/Softcorp.CollaborationAdminService/InitCollaboration',
+      ($0.AdminCollaborationRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.AdminCollaborationResponse.fromBuffer(value));
   static final _$createCollaboration = $grpc.ClientMethod<
           $0.AdminCollaborationRequest, $0.AdminCollaborationResponse>(
       '/Softcorp.CollaborationAdminService/CreateCollaboration',
@@ -981,6 +987,12 @@ class CollaborationAdminServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.Response> ping($0.Request request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$ping, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AdminCollaborationResponse> initCollaboration(
+      $0.AdminCollaborationRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$initCollaboration, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.AdminCollaborationResponse> createCollaboration(
@@ -1054,6 +1066,15 @@ abstract class CollaborationAdminServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Request.fromBuffer(value),
         ($0.Response value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AdminCollaborationRequest,
+            $0.AdminCollaborationResponse>(
+        'InitCollaboration',
+        initCollaboration_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.AdminCollaborationRequest.fromBuffer(value),
+        ($0.AdminCollaborationResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.AdminCollaborationRequest,
             $0.AdminCollaborationResponse>(
         'CreateCollaboration',
@@ -1142,6 +1163,12 @@ abstract class CollaborationAdminServiceBase extends $grpc.Service {
     return ping(call, await request);
   }
 
+  $async.Future<$0.AdminCollaborationResponse> initCollaboration_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.AdminCollaborationRequest> request) async {
+    return initCollaboration(call, await request);
+  }
+
   $async.Future<$0.AdminCollaborationResponse> createCollaboration_Pre(
       $grpc.ServiceCall call,
       $async.Future<$0.AdminCollaborationRequest> request) async {
@@ -1197,6 +1224,8 @@ abstract class CollaborationAdminServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.Response> ping($grpc.ServiceCall call, $0.Request request);
+  $async.Future<$0.AdminCollaborationResponse> initCollaboration(
+      $grpc.ServiceCall call, $0.AdminCollaborationRequest request);
   $async.Future<$0.AdminCollaborationResponse> createCollaboration(
       $grpc.ServiceCall call, $0.AdminCollaborationRequest request);
   $async.Future<$0.AdminCollaborationResponse> getCollaborationById(
