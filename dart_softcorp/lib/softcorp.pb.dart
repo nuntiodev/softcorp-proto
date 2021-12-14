@@ -395,8 +395,9 @@ class Collaboration extends $pb.GeneratedMessage {
     ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accepted')
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hashedCode', protoName: 'hashedCode')
     ..e<CollaborationRole>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role', $pb.PbFieldType.OE, defaultOrMaker: CollaborationRole.INVALID_COLLABORATION_ROLE, valueOf: CollaborationRole.valueOf, enumValues: CollaborationRole.values)
-    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sendAt', protoName: 'sendAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'acceptedAt', protoName: 'acceptedAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -410,8 +411,9 @@ class Collaboration extends $pb.GeneratedMessage {
     $core.bool? accepted,
     $core.String? hashedCode,
     CollaborationRole? role,
-    $1.Timestamp? createdAt,
+    $1.Timestamp? sendAt,
     $1.Timestamp? updatedAt,
+    $1.Timestamp? acceptedAt,
   }) {
     final _result = create();
     if (id != null) {
@@ -438,11 +440,14 @@ class Collaboration extends $pb.GeneratedMessage {
     if (role != null) {
       _result.role = role;
     }
-    if (createdAt != null) {
-      _result.createdAt = createdAt;
+    if (sendAt != null) {
+      _result.sendAt = sendAt;
     }
     if (updatedAt != null) {
       _result.updatedAt = updatedAt;
+    }
+    if (acceptedAt != null) {
+      _result.acceptedAt = acceptedAt;
     }
     return _result;
   }
@@ -540,15 +545,15 @@ class Collaboration extends $pb.GeneratedMessage {
   void clearRole() => clearField(8);
 
   @$pb.TagNumber(9)
-  $1.Timestamp get createdAt => $_getN(8);
+  $1.Timestamp get sendAt => $_getN(8);
   @$pb.TagNumber(9)
-  set createdAt($1.Timestamp v) { setField(9, v); }
+  set sendAt($1.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasCreatedAt() => $_has(8);
+  $core.bool hasSendAt() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCreatedAt() => clearField(9);
+  void clearSendAt() => clearField(9);
   @$pb.TagNumber(9)
-  $1.Timestamp ensureCreatedAt() => $_ensure(8);
+  $1.Timestamp ensureSendAt() => $_ensure(8);
 
   @$pb.TagNumber(10)
   $1.Timestamp get updatedAt => $_getN(9);
@@ -560,6 +565,17 @@ class Collaboration extends $pb.GeneratedMessage {
   void clearUpdatedAt() => clearField(10);
   @$pb.TagNumber(10)
   $1.Timestamp ensureUpdatedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get acceptedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set acceptedAt($1.Timestamp v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasAcceptedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearAcceptedAt() => clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureAcceptedAt() => $_ensure(10);
 }
 
 class Organization extends $pb.GeneratedMessage {

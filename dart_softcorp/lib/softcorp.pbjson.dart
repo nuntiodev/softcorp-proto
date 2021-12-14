@@ -214,13 +214,14 @@ const Collaboration$json = const {
     const {'1': 'accepted', '3': 6, '4': 1, '5': 8, '10': 'accepted'},
     const {'1': 'hashedCode', '3': 7, '4': 1, '5': 9, '10': 'hashedCode'},
     const {'1': 'role', '3': 8, '4': 1, '5': 14, '6': '.Softcorp.CollaborationRole', '10': 'role'},
-    const {'1': 'createdAt', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'sendAt', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'sendAt'},
     const {'1': 'updatedAt', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'acceptedAt', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'acceptedAt'},
   ],
 };
 
 /// Descriptor for `Collaboration`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List collaborationDescriptor = $convert.base64Decode('Cg1Db2xsYWJvcmF0aW9uEg4KAmlkGAEgASgJUgJpZBIUCgVlbWFpbBgCIAEoCVIFZW1haWwSFgoGdXNlcklkGAMgASgJUgZ1c2VySWQSGgoIb2JqZWN0SWQYBCABKAlSCG9iamVjdElkEkkKEWNvbGxhYm9yYXRpb25UeXBlGAUgASgOMhsuU29mdGNvcnAuQ29sbGFib3JhdGlvblR5cGVSEWNvbGxhYm9yYXRpb25UeXBlEhoKCGFjY2VwdGVkGAYgASgIUghhY2NlcHRlZBIeCgpoYXNoZWRDb2RlGAcgASgJUgpoYXNoZWRDb2RlEi8KBHJvbGUYCCABKA4yGy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uUm9sZVIEcm9sZRI4CgljcmVhdGVkQXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOAoJdXBkYXRlZEF0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+final $typed_data.Uint8List collaborationDescriptor = $convert.base64Decode('Cg1Db2xsYWJvcmF0aW9uEg4KAmlkGAEgASgJUgJpZBIUCgVlbWFpbBgCIAEoCVIFZW1haWwSFgoGdXNlcklkGAMgASgJUgZ1c2VySWQSGgoIb2JqZWN0SWQYBCABKAlSCG9iamVjdElkEkkKEWNvbGxhYm9yYXRpb25UeXBlGAUgASgOMhsuU29mdGNvcnAuQ29sbGFib3JhdGlvblR5cGVSEWNvbGxhYm9yYXRpb25UeXBlEhoKCGFjY2VwdGVkGAYgASgIUghhY2NlcHRlZBIeCgpoYXNoZWRDb2RlGAcgASgJUgpoYXNoZWRDb2RlEi8KBHJvbGUYCCABKA4yGy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uUm9sZVIEcm9sZRIyCgZzZW5kQXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgZzZW5kQXQSOAoJdXBkYXRlZEF0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0EjoKCmFjY2VwdGVkQXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgphY2NlcHRlZEF0');
 @$core.Deprecated('Use organizationDescriptor instead')
 const Organization$json = const {
   '1': 'Organization',
