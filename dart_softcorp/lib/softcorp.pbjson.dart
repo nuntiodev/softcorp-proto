@@ -208,20 +208,19 @@ const Collaboration$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
-    const {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'userId', '3': 4, '4': 1, '5': 9, '10': 'userId'},
-    const {'1': 'objectId', '3': 5, '4': 1, '5': 9, '10': 'objectId'},
-    const {'1': 'collaborationType', '3': 6, '4': 1, '5': 14, '6': '.Softcorp.CollaborationType', '10': 'collaborationType'},
-    const {'1': 'accepted', '3': 7, '4': 1, '5': 8, '10': 'accepted'},
-    const {'1': 'hashedCode', '3': 8, '4': 1, '5': 9, '10': 'hashedCode'},
-    const {'1': 'role', '3': 9, '4': 1, '5': 14, '6': '.Softcorp.CollaborationRole', '10': 'role'},
-    const {'1': 'createdAt', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updatedAt', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'userId', '3': 3, '4': 1, '5': 9, '10': 'userId'},
+    const {'1': 'objectId', '3': 4, '4': 1, '5': 9, '10': 'objectId'},
+    const {'1': 'collaborationType', '3': 5, '4': 1, '5': 14, '6': '.Softcorp.CollaborationType', '10': 'collaborationType'},
+    const {'1': 'accepted', '3': 6, '4': 1, '5': 8, '10': 'accepted'},
+    const {'1': 'hashedCode', '3': 7, '4': 1, '5': 9, '10': 'hashedCode'},
+    const {'1': 'role', '3': 8, '4': 1, '5': 14, '6': '.Softcorp.CollaborationRole', '10': 'role'},
+    const {'1': 'createdAt', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updatedAt', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `Collaboration`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List collaborationDescriptor = $convert.base64Decode('Cg1Db2xsYWJvcmF0aW9uEg4KAmlkGAEgASgJUgJpZBIUCgVlbWFpbBgCIAEoCVIFZW1haWwSEgoEbmFtZRgDIAEoCVIEbmFtZRIWCgZ1c2VySWQYBCABKAlSBnVzZXJJZBIaCghvYmplY3RJZBgFIAEoCVIIb2JqZWN0SWQSSQoRY29sbGFib3JhdGlvblR5cGUYBiABKA4yGy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uVHlwZVIRY29sbGFib3JhdGlvblR5cGUSGgoIYWNjZXB0ZWQYByABKAhSCGFjY2VwdGVkEh4KCmhhc2hlZENvZGUYCCABKAlSCmhhc2hlZENvZGUSLwoEcm9sZRgJIAEoDjIbLlNvZnRjb3JwLkNvbGxhYm9yYXRpb25Sb2xlUgRyb2xlEjgKCWNyZWF0ZWRBdBgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI4Cgl1cGRhdGVkQXQYCyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
+final $typed_data.Uint8List collaborationDescriptor = $convert.base64Decode('Cg1Db2xsYWJvcmF0aW9uEg4KAmlkGAEgASgJUgJpZBIUCgVlbWFpbBgCIAEoCVIFZW1haWwSFgoGdXNlcklkGAMgASgJUgZ1c2VySWQSGgoIb2JqZWN0SWQYBCABKAlSCG9iamVjdElkEkkKEWNvbGxhYm9yYXRpb25UeXBlGAUgASgOMhsuU29mdGNvcnAuQ29sbGFib3JhdGlvblR5cGVSEWNvbGxhYm9yYXRpb25UeXBlEhoKCGFjY2VwdGVkGAYgASgIUghhY2NlcHRlZBIeCgpoYXNoZWRDb2RlGAcgASgJUgpoYXNoZWRDb2RlEi8KBHJvbGUYCCABKA4yGy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uUm9sZVIEcm9sZRI4CgljcmVhdGVkQXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOAoJdXBkYXRlZEF0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
 @$core.Deprecated('Use organizationDescriptor instead')
 const Organization$json = const {
   '1': 'Organization',
