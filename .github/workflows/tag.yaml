@@ -91,7 +91,7 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
 
       - name: Set pubdev tag
-        run: sh .build/update-pubdev-version.sh ${{ steps.tag.outputs.VERSION }}
+        run: sh build/update-pubdev-version.sh ${{ steps.tag.outputs.VERSION }}
 
       - name: Publish
         uses: sakebook/actions-flutter-pub-publisher@v1.3.1
