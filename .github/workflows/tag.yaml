@@ -15,6 +15,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+
+      # Tag dart files
+      - name: Get tag
+        id: tag
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
+      - name: Set pubdev tag
+        run: sh build/update-pubdev-version.sh ${{ steps.tag.outputs.VERSION }}
+
       - name: Checkout main branch
         run: git checkout main
 
@@ -86,13 +94,6 @@ jobs:
         run: git  push -u origin
 
       # Push to pubdev
-      - name: Get tag
-        id: tag
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
-
-      - name: Set pubdev tag
-        run: sh build/update-pubdev-version.sh ${{ steps.tag.outputs.VERSION }}
-
       - name: Publish
         uses: sakebook/actions-flutter-pub-publisher@v1.3.1
         with:
