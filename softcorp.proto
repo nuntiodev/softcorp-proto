@@ -133,6 +133,14 @@ enum CollaborationType {
     CONNECT_COLLABORATION = 2;
 }
 
+enum CollaborationRole {
+    INVALID_COLLABORATION_ROLE = 0;
+    OWNER = 1;
+    VIEWER = 2;
+    EDITOR = 3;
+    ADMIN = 4;
+}
+
 message ConnectMetric {
     google.protobuf.Timestamp date = 1;
     int32 numberOfRequests = 2;
@@ -168,8 +176,9 @@ message Collaboration {
     CollaborationType collaborationType = 4;
     bool accepted = 5;
     string hashedCode = 6;
-    google.protobuf.Timestamp createdAt = 7;
-    google.protobuf.Timestamp updatedAt = 8;
+    CollaborationRole role = 7;
+    google.protobuf.Timestamp createdAt = 8;
+    google.protobuf.Timestamp updatedAt = 9;
 }
 
 message Organization {
