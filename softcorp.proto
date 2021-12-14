@@ -192,7 +192,6 @@ message Organization {
     google.protobuf.Timestamp createdAt = 5;
     google.protobuf.Timestamp updatedAt = 6;
     bool isOwner = 7;
-    repeated Collaboration collaborations = 8;
 }
 
 message Scope {
@@ -322,7 +321,6 @@ message ClientApp {
     repeated OauthResponse availableResponses = 19;
     repeated CountryCode availableCountries = 20;
     repeated Scope advancedScopes = 21;
-    repeated Collaboration collaborations = 22;
 }
 
 message PublicUserRequest {

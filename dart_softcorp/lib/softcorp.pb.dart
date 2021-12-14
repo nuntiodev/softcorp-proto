@@ -587,7 +587,6 @@ class Organization extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
     ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isOwner', protoName: 'isOwner')
-    ..pc<Collaboration>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collaborations', $pb.PbFieldType.PM, subBuilder: Collaboration.create)
     ..hasRequiredFields = false
   ;
 
@@ -600,7 +599,6 @@ class Organization extends $pb.GeneratedMessage {
     $1.Timestamp? createdAt,
     $1.Timestamp? updatedAt,
     $core.bool? isOwner,
-    $core.Iterable<Collaboration>? collaborations,
   }) {
     final _result = create();
     if (id != null) {
@@ -623,9 +621,6 @@ class Organization extends $pb.GeneratedMessage {
     }
     if (isOwner != null) {
       _result.isOwner = isOwner;
-    }
-    if (collaborations != null) {
-      _result.collaborations.addAll(collaborations);
     }
     return _result;
   }
@@ -716,9 +711,6 @@ class Organization extends $pb.GeneratedMessage {
   $core.bool hasIsOwner() => $_has(6);
   @$pb.TagNumber(7)
   void clearIsOwner() => clearField(7);
-
-  @$pb.TagNumber(8)
-  $core.List<Collaboration> get collaborations => $_getList(7);
 }
 
 class Scope extends $pb.GeneratedMessage {
@@ -1685,7 +1677,6 @@ class ClientApp extends $pb.GeneratedMessage {
     ..pc<OauthResponse>(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'availableResponses', $pb.PbFieldType.PM, protoName: 'availableResponses', subBuilder: OauthResponse.create)
     ..pc<CountryCode>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'availableCountries', $pb.PbFieldType.PM, protoName: 'availableCountries', subBuilder: CountryCode.create)
     ..pc<Scope>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'advancedScopes', $pb.PbFieldType.PM, protoName: 'advancedScopes', subBuilder: Scope.create)
-    ..pc<Collaboration>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collaborations', $pb.PbFieldType.PM, subBuilder: Collaboration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1712,7 +1703,6 @@ class ClientApp extends $pb.GeneratedMessage {
     $core.Iterable<OauthResponse>? availableResponses,
     $core.Iterable<CountryCode>? availableCountries,
     $core.Iterable<Scope>? advancedScopes,
-    $core.Iterable<Collaboration>? collaborations,
   }) {
     final _result = create();
     if (id != null) {
@@ -1777,9 +1767,6 @@ class ClientApp extends $pb.GeneratedMessage {
     }
     if (advancedScopes != null) {
       _result.advancedScopes.addAll(advancedScopes);
-    }
-    if (collaborations != null) {
-      _result.collaborations.addAll(collaborations);
     }
     return _result;
   }
@@ -1938,9 +1925,6 @@ class ClientApp extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(21)
   $core.List<Scope> get advancedScopes => $_getList(20);
-
-  @$pb.TagNumber(22)
-  $core.List<Collaboration> get collaborations => $_getList(21);
 }
 
 class PublicUserRequest extends $pb.GeneratedMessage {
