@@ -171,14 +171,15 @@ message ConnectMetrics {
 
 message Collaboration {
     string id = 1;
-    string userId = 2;
-    string objectId = 3; 
-    CollaborationType collaborationType = 4;
-    bool accepted = 5;
-    string hashedCode = 6;
-    CollaborationRole role = 7;
-    google.protobuf.Timestamp createdAt = 8;
-    google.protobuf.Timestamp updatedAt = 9;
+    string email = 2;
+    string userId = 3;
+    string objectId = 4; 
+    CollaborationType collaborationType = 5;
+    bool accepted = 6;
+    string hashedCode = 7;
+    CollaborationRole role = 8;
+    google.protobuf.Timestamp createdAt = 9;
+    google.protobuf.Timestamp updatedAt = 10;
 }
 
 message Organization {
