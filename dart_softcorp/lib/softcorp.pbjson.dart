@@ -515,13 +515,12 @@ const PublicDashboardRequest$json = const {
     const {'1': 'connectApp', '3': 3, '4': 1, '5': 11, '6': '.Softcorp.ClientApp', '10': 'connectApp'},
     const {'1': 'timespan', '3': 4, '4': 1, '5': 14, '6': '.Softcorp.Timespan', '10': 'timespan'},
     const {'1': 'collaboration', '3': 5, '4': 1, '5': 11, '6': '.Softcorp.Collaboration', '10': 'collaboration'},
-    const {'1': 'emailOfCollaborator', '3': 6, '4': 1, '5': 9, '10': 'emailOfCollaborator'},
-    const {'1': 'secret', '3': 7, '4': 1, '5': 9, '10': 'secret'},
+    const {'1': 'secret', '3': 6, '4': 1, '5': 9, '10': 'secret'},
   ],
 };
 
 /// Descriptor for `PublicDashboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List publicDashboardRequestDescriptor = $convert.base64Decode('ChZQdWJsaWNEYXNoYm9hcmRSZXF1ZXN0EiAKC2FjY2Vzc1Rva2VuGAEgASgJUgthY2Nlc3NUb2tlbhI6Cgxvcmdhbml6YXRpb24YAiABKAsyFi5Tb2Z0Y29ycC5Pcmdhbml6YXRpb25SDG9yZ2FuaXphdGlvbhIzCgpjb25uZWN0QXBwGAMgASgLMhMuU29mdGNvcnAuQ2xpZW50QXBwUgpjb25uZWN0QXBwEi4KCHRpbWVzcGFuGAQgASgOMhIuU29mdGNvcnAuVGltZXNwYW5SCHRpbWVzcGFuEj0KDWNvbGxhYm9yYXRpb24YBSABKAsyFy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uUg1jb2xsYWJvcmF0aW9uEjAKE2VtYWlsT2ZDb2xsYWJvcmF0b3IYBiABKAlSE2VtYWlsT2ZDb2xsYWJvcmF0b3ISFgoGc2VjcmV0GAcgASgJUgZzZWNyZXQ=');
+final $typed_data.Uint8List publicDashboardRequestDescriptor = $convert.base64Decode('ChZQdWJsaWNEYXNoYm9hcmRSZXF1ZXN0EiAKC2FjY2Vzc1Rva2VuGAEgASgJUgthY2Nlc3NUb2tlbhI6Cgxvcmdhbml6YXRpb24YAiABKAsyFi5Tb2Z0Y29ycC5Pcmdhbml6YXRpb25SDG9yZ2FuaXphdGlvbhIzCgpjb25uZWN0QXBwGAMgASgLMhMuU29mdGNvcnAuQ2xpZW50QXBwUgpjb25uZWN0QXBwEi4KCHRpbWVzcGFuGAQgASgOMhIuU29mdGNvcnAuVGltZXNwYW5SCHRpbWVzcGFuEj0KDWNvbGxhYm9yYXRpb24YBSABKAsyFy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uUg1jb2xsYWJvcmF0aW9uEhYKBnNlY3JldBgGIAEoCVIGc2VjcmV0');
 @$core.Deprecated('Use publicDashboardResponseDescriptor instead')
 const PublicDashboardResponse$json = const {
   '1': 'PublicDashboardResponse',
@@ -559,16 +558,15 @@ const AdminCollaborationRequest$json = const {
     const {'1': 'accessToken', '3': 3, '4': 1, '5': 9, '10': 'accessToken'},
     const {'1': 'collaboration', '3': 4, '4': 1, '5': 11, '6': '.Softcorp.Collaboration', '10': 'collaboration'},
     const {'1': 'acceptCollaboration', '3': 5, '4': 1, '5': 8, '10': 'acceptCollaboration'},
-    const {'1': 'emailOfCollaborator', '3': 6, '4': 1, '5': 9, '10': 'emailOfCollaborator'},
-    const {'1': 'secret', '3': 7, '4': 1, '5': 9, '10': 'secret'},
-    const {'1': 'onlyConnect', '3': 8, '4': 1, '5': 8, '10': 'onlyConnect'},
-    const {'1': 'onlyOrganization', '3': 9, '4': 1, '5': 8, '10': 'onlyOrganization'},
-    const {'1': 'onlyAccepted', '3': 10, '4': 1, '5': 8, '10': 'onlyAccepted'},
+    const {'1': 'secret', '3': 6, '4': 1, '5': 9, '10': 'secret'},
+    const {'1': 'onlyConnect', '3': 7, '4': 1, '5': 8, '10': 'onlyConnect'},
+    const {'1': 'onlyOrganization', '3': 8, '4': 1, '5': 8, '10': 'onlyOrganization'},
+    const {'1': 'onlyAccepted', '3': 9, '4': 1, '5': 8, '10': 'onlyAccepted'},
   ],
 };
 
 /// Descriptor for `AdminCollaborationRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List adminCollaborationRequestDescriptor = $convert.base64Decode('ChlBZG1pbkNvbGxhYm9yYXRpb25SZXF1ZXN0EjoKDG9yZ2FuaXphdGlvbhgBIAEoCzIWLlNvZnRjb3JwLk9yZ2FuaXphdGlvblIMb3JnYW5pemF0aW9uEjMKCmNvbm5lY3RBcHAYAiABKAsyEy5Tb2Z0Y29ycC5DbGllbnRBcHBSCmNvbm5lY3RBcHASIAoLYWNjZXNzVG9rZW4YAyABKAlSC2FjY2Vzc1Rva2VuEj0KDWNvbGxhYm9yYXRpb24YBCABKAsyFy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uUg1jb2xsYWJvcmF0aW9uEjAKE2FjY2VwdENvbGxhYm9yYXRpb24YBSABKAhSE2FjY2VwdENvbGxhYm9yYXRpb24SMAoTZW1haWxPZkNvbGxhYm9yYXRvchgGIAEoCVITZW1haWxPZkNvbGxhYm9yYXRvchIWCgZzZWNyZXQYByABKAlSBnNlY3JldBIgCgtvbmx5Q29ubmVjdBgIIAEoCFILb25seUNvbm5lY3QSKgoQb25seU9yZ2FuaXphdGlvbhgJIAEoCFIQb25seU9yZ2FuaXphdGlvbhIiCgxvbmx5QWNjZXB0ZWQYCiABKAhSDG9ubHlBY2NlcHRlZA==');
+final $typed_data.Uint8List adminCollaborationRequestDescriptor = $convert.base64Decode('ChlBZG1pbkNvbGxhYm9yYXRpb25SZXF1ZXN0EjoKDG9yZ2FuaXphdGlvbhgBIAEoCzIWLlNvZnRjb3JwLk9yZ2FuaXphdGlvblIMb3JnYW5pemF0aW9uEjMKCmNvbm5lY3RBcHAYAiABKAsyEy5Tb2Z0Y29ycC5DbGllbnRBcHBSCmNvbm5lY3RBcHASIAoLYWNjZXNzVG9rZW4YAyABKAlSC2FjY2Vzc1Rva2VuEj0KDWNvbGxhYm9yYXRpb24YBCABKAsyFy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uUg1jb2xsYWJvcmF0aW9uEjAKE2FjY2VwdENvbGxhYm9yYXRpb24YBSABKAhSE2FjY2VwdENvbGxhYm9yYXRpb24SFgoGc2VjcmV0GAYgASgJUgZzZWNyZXQSIAoLb25seUNvbm5lY3QYByABKAhSC29ubHlDb25uZWN0EioKEG9ubHlPcmdhbml6YXRpb24YCCABKAhSEG9ubHlPcmdhbml6YXRpb24SIgoMb25seUFjY2VwdGVkGAkgASgIUgxvbmx5QWNjZXB0ZWQ=');
 @$core.Deprecated('Use adminCollaborationResponseDescriptor instead')
 const AdminCollaborationResponse$json = const {
   '1': 'AdminCollaborationResponse',

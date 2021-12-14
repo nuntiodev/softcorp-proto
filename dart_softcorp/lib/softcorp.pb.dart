@@ -2566,8 +2566,7 @@ class PublicDashboardRequest extends $pb.GeneratedMessage {
     ..aOM<ClientApp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'connectApp', protoName: 'connectApp', subBuilder: ClientApp.create)
     ..e<Timespan>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timespan', $pb.PbFieldType.OE, defaultOrMaker: Timespan.INVALID_TIMESPAN, valueOf: Timespan.valueOf, enumValues: Timespan.values)
     ..aOM<Collaboration>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collaboration', subBuilder: Collaboration.create)
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailOfCollaborator', protoName: 'emailOfCollaborator')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'secret')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'secret')
     ..hasRequiredFields = false
   ;
 
@@ -2578,7 +2577,6 @@ class PublicDashboardRequest extends $pb.GeneratedMessage {
     ClientApp? connectApp,
     Timespan? timespan,
     Collaboration? collaboration,
-    $core.String? emailOfCollaborator,
     $core.String? secret,
   }) {
     final _result = create();
@@ -2596,9 +2594,6 @@ class PublicDashboardRequest extends $pb.GeneratedMessage {
     }
     if (collaboration != null) {
       _result.collaboration = collaboration;
-    }
-    if (emailOfCollaborator != null) {
-      _result.emailOfCollaborator = emailOfCollaborator;
     }
     if (secret != null) {
       _result.secret = secret;
@@ -2678,22 +2673,13 @@ class PublicDashboardRequest extends $pb.GeneratedMessage {
   Collaboration ensureCollaboration() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $core.String get emailOfCollaborator => $_getSZ(5);
+  $core.String get secret => $_getSZ(5);
   @$pb.TagNumber(6)
-  set emailOfCollaborator($core.String v) { $_setString(5, v); }
+  set secret($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasEmailOfCollaborator() => $_has(5);
+  $core.bool hasSecret() => $_has(5);
   @$pb.TagNumber(6)
-  void clearEmailOfCollaborator() => clearField(6);
-
-  @$pb.TagNumber(7)
-  $core.String get secret => $_getSZ(6);
-  @$pb.TagNumber(7)
-  set secret($core.String v) { $_setString(6, v); }
-  @$pb.TagNumber(7)
-  $core.bool hasSecret() => $_has(6);
-  @$pb.TagNumber(7)
-  void clearSecret() => clearField(7);
+  void clearSecret() => clearField(6);
 }
 
 class PublicDashboardResponse extends $pb.GeneratedMessage {
@@ -2830,11 +2816,10 @@ class AdminCollaborationRequest extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accessToken', protoName: 'accessToken')
     ..aOM<Collaboration>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collaboration', subBuilder: Collaboration.create)
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'acceptCollaboration', protoName: 'acceptCollaboration')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'emailOfCollaborator', protoName: 'emailOfCollaborator')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'secret')
-    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'onlyConnect', protoName: 'onlyConnect')
-    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'onlyOrganization', protoName: 'onlyOrganization')
-    ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'onlyAccepted', protoName: 'onlyAccepted')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'secret')
+    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'onlyConnect', protoName: 'onlyConnect')
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'onlyOrganization', protoName: 'onlyOrganization')
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'onlyAccepted', protoName: 'onlyAccepted')
     ..hasRequiredFields = false
   ;
 
@@ -2845,7 +2830,6 @@ class AdminCollaborationRequest extends $pb.GeneratedMessage {
     $core.String? accessToken,
     Collaboration? collaboration,
     $core.bool? acceptCollaboration,
-    $core.String? emailOfCollaborator,
     $core.String? secret,
     $core.bool? onlyConnect,
     $core.bool? onlyOrganization,
@@ -2866,9 +2850,6 @@ class AdminCollaborationRequest extends $pb.GeneratedMessage {
     }
     if (acceptCollaboration != null) {
       _result.acceptCollaboration = acceptCollaboration;
-    }
-    if (emailOfCollaborator != null) {
-      _result.emailOfCollaborator = emailOfCollaborator;
     }
     if (secret != null) {
       _result.secret = secret;
@@ -2957,49 +2938,40 @@ class AdminCollaborationRequest extends $pb.GeneratedMessage {
   void clearAcceptCollaboration() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get emailOfCollaborator => $_getSZ(5);
+  $core.String get secret => $_getSZ(5);
   @$pb.TagNumber(6)
-  set emailOfCollaborator($core.String v) { $_setString(5, v); }
+  set secret($core.String v) { $_setString(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasEmailOfCollaborator() => $_has(5);
+  $core.bool hasSecret() => $_has(5);
   @$pb.TagNumber(6)
-  void clearEmailOfCollaborator() => clearField(6);
+  void clearSecret() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get secret => $_getSZ(6);
+  $core.bool get onlyConnect => $_getBF(6);
   @$pb.TagNumber(7)
-  set secret($core.String v) { $_setString(6, v); }
+  set onlyConnect($core.bool v) { $_setBool(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasSecret() => $_has(6);
+  $core.bool hasOnlyConnect() => $_has(6);
   @$pb.TagNumber(7)
-  void clearSecret() => clearField(7);
+  void clearOnlyConnect() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.bool get onlyConnect => $_getBF(7);
+  $core.bool get onlyOrganization => $_getBF(7);
   @$pb.TagNumber(8)
-  set onlyConnect($core.bool v) { $_setBool(7, v); }
+  set onlyOrganization($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasOnlyConnect() => $_has(7);
+  $core.bool hasOnlyOrganization() => $_has(7);
   @$pb.TagNumber(8)
-  void clearOnlyConnect() => clearField(8);
+  void clearOnlyOrganization() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.bool get onlyOrganization => $_getBF(8);
+  $core.bool get onlyAccepted => $_getBF(8);
   @$pb.TagNumber(9)
-  set onlyOrganization($core.bool v) { $_setBool(8, v); }
+  set onlyAccepted($core.bool v) { $_setBool(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasOnlyOrganization() => $_has(8);
+  $core.bool hasOnlyAccepted() => $_has(8);
   @$pb.TagNumber(9)
-  void clearOnlyOrganization() => clearField(9);
-
-  @$pb.TagNumber(10)
-  $core.bool get onlyAccepted => $_getBF(9);
-  @$pb.TagNumber(10)
-  set onlyAccepted($core.bool v) { $_setBool(9, v); }
-  @$pb.TagNumber(10)
-  $core.bool hasOnlyAccepted() => $_has(9);
-  @$pb.TagNumber(10)
-  void clearOnlyAccepted() => clearField(10);
+  void clearOnlyAccepted() => clearField(9);
 }
 
 class AdminCollaborationResponse extends $pb.GeneratedMessage {

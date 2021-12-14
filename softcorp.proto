@@ -380,8 +380,7 @@ message PublicDashboardRequest {
     ClientApp connectApp = 3;
     Timespan timespan = 4;
     Collaboration collaboration = 5;
-    string emailOfCollaborator = 6;
-    string secret = 7;
+    string secret = 6;
 }
 
 message PublicDashboardResponse {
@@ -402,11 +401,10 @@ message AdminCollaborationRequest {
     string accessToken = 3;
     Collaboration collaboration = 4;
     bool acceptCollaboration = 5;
-    string emailOfCollaborator = 6;
-    string secret = 7;
-    bool onlyConnect = 8;
-    bool onlyOrganization = 9;
-    bool onlyAccepted = 10;
+    string secret = 6;
+    bool onlyConnect = 7;
+    bool onlyOrganization = 8;
+    bool onlyAccepted = 9;
 }
 
 message AdminCollaborationResponse {
