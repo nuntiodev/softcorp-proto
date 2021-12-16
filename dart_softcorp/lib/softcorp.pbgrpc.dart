@@ -960,9 +960,9 @@ class CollaborationAdminServiceClient extends $grpc.Client {
       ($0.AdminCollaborationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.AdminCollaborationResponse.fromBuffer(value));
-  static final _$deleteUserObjectCollaboration = $grpc.ClientMethod<
+  static final _$deleteCollaboration = $grpc.ClientMethod<
           $0.AdminCollaborationRequest, $0.AdminCollaborationResponse>(
-      '/Softcorp.CollaborationAdminService/DeleteUserObjectCollaboration',
+      '/Softcorp.CollaborationAdminService/DeleteCollaboration',
       ($0.AdminCollaborationRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.AdminCollaborationResponse.fromBuffer(value));
@@ -1033,11 +1033,10 @@ class CollaborationAdminServiceClient extends $grpc.Client {
     return $createUnaryCall(_$acceptCollaboration, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.AdminCollaborationResponse>
-      deleteUserObjectCollaboration($0.AdminCollaborationRequest request,
-          {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$deleteUserObjectCollaboration, request,
-        options: options);
+  $grpc.ResponseFuture<$0.AdminCollaborationResponse> deleteCollaboration(
+      $0.AdminCollaborationRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$deleteCollaboration, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.AdminCollaborationResponse>
@@ -1131,8 +1130,8 @@ abstract class CollaborationAdminServiceBase extends $grpc.Service {
         ($0.AdminCollaborationResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.AdminCollaborationRequest,
             $0.AdminCollaborationResponse>(
-        'DeleteUserObjectCollaboration',
-        deleteUserObjectCollaboration_Pre,
+        'DeleteCollaboration',
+        deleteCollaboration_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
@@ -1205,10 +1204,10 @@ abstract class CollaborationAdminServiceBase extends $grpc.Service {
     return acceptCollaboration(call, await request);
   }
 
-  $async.Future<$0.AdminCollaborationResponse>
-      deleteUserObjectCollaboration_Pre($grpc.ServiceCall call,
-          $async.Future<$0.AdminCollaborationRequest> request) async {
-    return deleteUserObjectCollaboration(call, await request);
+  $async.Future<$0.AdminCollaborationResponse> deleteCollaboration_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.AdminCollaborationRequest> request) async {
+    return deleteCollaboration(call, await request);
   }
 
   $async.Future<$0.AdminCollaborationResponse>
@@ -1238,7 +1237,7 @@ abstract class CollaborationAdminServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.AdminCollaborationRequest request);
   $async.Future<$0.AdminCollaborationResponse> acceptCollaboration(
       $grpc.ServiceCall call, $0.AdminCollaborationRequest request);
-  $async.Future<$0.AdminCollaborationResponse> deleteUserObjectCollaboration(
+  $async.Future<$0.AdminCollaborationResponse> deleteCollaboration(
       $grpc.ServiceCall call, $0.AdminCollaborationRequest request);
   $async.Future<$0.AdminCollaborationResponse> deleteCollaborationsByObjectId(
       $grpc.ServiceCall call, $0.AdminCollaborationRequest request);

@@ -1382,7 +1382,7 @@ type CollaborationAdminServiceClient interface {
 	GetUserCollaborations(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
 	GetUserObjectCollaboration(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
 	AcceptCollaboration(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
-	DeleteUserObjectCollaboration(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
+	DeleteCollaboration(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
 	DeleteCollaborationsByObjectId(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
 	DeleteUserCollaborations(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error)
 }
@@ -1467,9 +1467,9 @@ func (c *collaborationAdminServiceClient) AcceptCollaboration(ctx context.Contex
 	return out, nil
 }
 
-func (c *collaborationAdminServiceClient) DeleteUserObjectCollaboration(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error) {
+func (c *collaborationAdminServiceClient) DeleteCollaboration(ctx context.Context, in *AdminCollaborationRequest, opts ...grpc.CallOption) (*AdminCollaborationResponse, error) {
 	out := new(AdminCollaborationResponse)
-	err := c.cc.Invoke(ctx, "/Softcorp.CollaborationAdminService/DeleteUserObjectCollaboration", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Softcorp.CollaborationAdminService/DeleteCollaboration", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1506,7 +1506,7 @@ type CollaborationAdminServiceServer interface {
 	GetUserCollaborations(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
 	GetUserObjectCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
 	AcceptCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
-	DeleteUserObjectCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
+	DeleteCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
 	DeleteCollaborationsByObjectId(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
 	DeleteUserCollaborations(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error)
 }
@@ -1539,8 +1539,8 @@ func (UnimplementedCollaborationAdminServiceServer) GetUserObjectCollaboration(c
 func (UnimplementedCollaborationAdminServiceServer) AcceptCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AcceptCollaboration not implemented")
 }
-func (UnimplementedCollaborationAdminServiceServer) DeleteUserObjectCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserObjectCollaboration not implemented")
+func (UnimplementedCollaborationAdminServiceServer) DeleteCollaboration(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteCollaboration not implemented")
 }
 func (UnimplementedCollaborationAdminServiceServer) DeleteCollaborationsByObjectId(context.Context, *AdminCollaborationRequest) (*AdminCollaborationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCollaborationsByObjectId not implemented")
@@ -1704,20 +1704,20 @@ func _CollaborationAdminService_AcceptCollaboration_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CollaborationAdminService_DeleteUserObjectCollaboration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CollaborationAdminService_DeleteCollaboration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AdminCollaborationRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CollaborationAdminServiceServer).DeleteUserObjectCollaboration(ctx, in)
+		return srv.(CollaborationAdminServiceServer).DeleteCollaboration(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Softcorp.CollaborationAdminService/DeleteUserObjectCollaboration",
+		FullMethod: "/Softcorp.CollaborationAdminService/DeleteCollaboration",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CollaborationAdminServiceServer).DeleteUserObjectCollaboration(ctx, req.(*AdminCollaborationRequest))
+		return srv.(CollaborationAdminServiceServer).DeleteCollaboration(ctx, req.(*AdminCollaborationRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1798,8 +1798,8 @@ var CollaborationAdminService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _CollaborationAdminService_AcceptCollaboration_Handler,
 		},
 		{
-			MethodName: "DeleteUserObjectCollaboration",
-			Handler:    _CollaborationAdminService_DeleteUserObjectCollaboration_Handler,
+			MethodName: "DeleteCollaboration",
+			Handler:    _CollaborationAdminService_DeleteCollaboration_Handler,
 		},
 		{
 			MethodName: "DeleteCollaborationsByObjectId",

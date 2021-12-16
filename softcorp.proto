@@ -61,7 +61,7 @@ service CollaborationAdminService {
     rpc GetUserCollaborations(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
     rpc GetUserObjectCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
     rpc AcceptCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc DeleteUserObjectCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
+    rpc DeleteCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
     rpc DeleteCollaborationsByObjectId(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
     rpc DeleteUserCollaborations(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
 }
