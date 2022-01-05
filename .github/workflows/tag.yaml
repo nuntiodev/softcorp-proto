@@ -73,11 +73,8 @@ jobs:
       - name: Install grpc-web
         run: GRPC_WEB_REL="https://github.com/grpc/grpc-web/releases" && curl -LO $GRPC_WEB_REL/download/1.3.0/protoc-gen-grpc-web-1.3.0-linux-x86_64
 
-      - name: Unpack grpc-web
-        run: mv ./protoc-gen-grpc-web-1.3.0-linux-x86_64 $HOME/.local
-
-      - name: Export protobuf path
-        run: export PATH="$PATH:$HOME/.local/bin"
+      - name: Move grpc-web
+        run: sudo mv ./protoc-gen-grpc-web-1.3.0-linux-x86_64 $HOME/.local/bin/protoc-gen-grpc-web && chmod +x $HOME/.local/bin/protoc-gen-grpc-web
 
       #- name: Validate grpc-web is installed correctly
       #  run: grpc-web --version
