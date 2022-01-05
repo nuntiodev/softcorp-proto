@@ -13,4 +13,5 @@ build-js-proto:
 .PHONY: build-proto
 build-proto:
 	make build-go-proto && \
-	make build-dart-proto
+	make build-dart-proto && \
+	make build-js-proto
