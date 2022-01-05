@@ -71,7 +71,7 @@ jobs:
         run: sudo apt install nodejs npm
 
       - name: install protoc protoc gen
-        run: npm install ts-protoc-gen@next
+        run: npm install -g ts-protoc-gen@next
 
       - name: Install grpc-web
         run: GRPC_WEB_REL="https://github.com/grpc/grpc-web/releases" && curl -LO $GRPC_WEB_REL/download/1.3.0/protoc-gen-grpc-web-1.3.0-linux-x86_64
