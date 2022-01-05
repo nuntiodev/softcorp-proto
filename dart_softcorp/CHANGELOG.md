@@ -24,3 +24,8 @@
 ## 0.0.50
 
 - New version.
+
+
+## 0.0.52
+
+- New version.
