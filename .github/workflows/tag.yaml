@@ -79,8 +79,8 @@ jobs:
       - name: Export protobuf path
         run: export PATH="$PATH:$HOME/.local/bin"
 
-      - name: Validate grpc-web is installed correctly
-        run: grpc-web --version
+      #- name: Validate grpc-web is installed correctly
+      #  run: grpc-web --version
 
       # Build internal proto files
       - name: Build softcorp.proto
