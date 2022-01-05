@@ -1,6 +1,6 @@
 {
   "name": "js_softcorp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "grpc-web package for the softcorp platform",
   "main": "softcorp_pb.d.ts",
   "scripts": {
