@@ -110,10 +110,10 @@ jobs:
         run: git  push -u origin
 
       # Push to pubdev
-      - name: Publish
-        uses: sakebook/actions-flutter-pub-publisher@v1.3.1
-        with:
-          credential: ${{ secrets.PUB_DEV_CREDENTIAL_JSON }}
-          skip_test: true
-          flutter_package: false
-          package_directory: ./dart_softcorp
+      #- name: Publish
+      #  uses: sakebook/actions-flutter-pub-publisher@v1.3.1
+      #  with:
+      #    credential: ${{ secrets.PUB_DEV_CREDENTIAL_JSON }}
+      #    skip_test: true
+      #    flutter_package: false
+      #    package_directory: ./dart_softcorp
