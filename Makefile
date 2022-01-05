@@ -8,7 +8,7 @@ build-dart-proto:
 
 .PHONY: build-js-proto
 build-js-proto:
-	protoc -I. softcorp.proto --js_out=import_style=commonjs+dts:./js_softcorp --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext:./js_softcorp
+	protoc -I. softcorp.proto --js_out=import_style=commonjs:./js_softcorp --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./js_softcorp
 
 .PHONY: build-proto
 build-proto:
