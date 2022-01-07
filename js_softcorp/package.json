@@ -1,8 +1,8 @@
 {
-  "name": "js_softcorp_web",
-  "version": "0.0.1",
-  "description": "gRPC web package for the softcorp platform",
-  "main": "SoftcorpServiceClientPb.js",
+  "name": "js_softcorp",
+  "version": "0.0.11",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
