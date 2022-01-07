@@ -1,8 +1,8 @@
 {
-  "name": "js_softcorp",
-  "version": "0.0.9",
-  "description": "grpc-web package for the softcorp platform",
-  "main": "softcorp_pb.d.js",
+  "name": "softcorp_js",
+  "version": "0.0.10",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,9 +15,5 @@
   "bugs": {
     "url": "https://github.com/softcorp-io/softcorp-proto/issues"
   },
-  "homepage": "https://github.com/softcorp-io/softcorp-proto#readme",
-  "dependencies": {
-    "google-protobuf": "^3.19.1",
-    "grpc-web": "^1.3.0"
-  }
+  "homepage": "https://github.com/softcorp-io/softcorp-proto#readme"
 }
