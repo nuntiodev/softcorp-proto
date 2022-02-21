@@ -68,6 +68,7 @@ service CollaborationAdminService {
 
 service DashboardPublicService {
     rpc Ping(Request) returns (Response) {}
+    rpc SetCookie(PublicDashboardRequest) returns (PublicDashboardResponse) {}
     rpc CreateOrganization(PublicDashboardRequest) returns (PublicDashboardResponse) {}
     rpc GetOrganizations(PublicDashboardRequest) returns (PublicDashboardResponse) {}
     rpc UpdateOrganizationDetails(PublicDashboardRequest) returns (PublicDashboardResponse) {}
