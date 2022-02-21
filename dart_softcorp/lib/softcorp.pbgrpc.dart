@@ -1250,12 +1250,6 @@ class DashboardPublicServiceClient extends $grpc.Client {
       '/Softcorp.DashboardPublicService/Ping',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
-  static final _$setCookie =
-      $grpc.ClientMethod<$0.PublicDashboardRequest, $0.PublicDashboardResponse>(
-          '/Softcorp.DashboardPublicService/SetCookie',
-          ($0.PublicDashboardRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.PublicDashboardResponse.fromBuffer(value));
   static final _$createOrganization =
       $grpc.ClientMethod<$0.PublicDashboardRequest, $0.PublicDashboardResponse>(
           '/Softcorp.DashboardPublicService/CreateOrganization',
@@ -1367,12 +1361,6 @@ class DashboardPublicServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.Response> ping($0.Request request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$ping, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$0.PublicDashboardResponse> setCookie(
-      $0.PublicDashboardRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$setCookie, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.PublicDashboardResponse> createOrganization(
@@ -1492,15 +1480,6 @@ abstract class DashboardPublicServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Request.fromBuffer(value),
         ($0.Response value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.PublicDashboardRequest,
-            $0.PublicDashboardResponse>(
-        'SetCookie',
-        setCookie_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.PublicDashboardRequest.fromBuffer(value),
-        ($0.PublicDashboardResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.PublicDashboardRequest,
             $0.PublicDashboardResponse>(
         'CreateOrganization',
@@ -1661,12 +1640,6 @@ abstract class DashboardPublicServiceBase extends $grpc.Service {
     return ping(call, await request);
   }
 
-  $async.Future<$0.PublicDashboardResponse> setCookie_Pre(
-      $grpc.ServiceCall call,
-      $async.Future<$0.PublicDashboardRequest> request) async {
-    return setCookie(call, await request);
-  }
-
   $async.Future<$0.PublicDashboardResponse> createOrganization_Pre(
       $grpc.ServiceCall call,
       $async.Future<$0.PublicDashboardRequest> request) async {
@@ -1770,8 +1743,6 @@ abstract class DashboardPublicServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.Response> ping($grpc.ServiceCall call, $0.Request request);
-  $async.Future<$0.PublicDashboardResponse> setCookie(
-      $grpc.ServiceCall call, $0.PublicDashboardRequest request);
   $async.Future<$0.PublicDashboardResponse> createOrganization(
       $grpc.ServiceCall call, $0.PublicDashboardRequest request);
   $async.Future<$0.PublicDashboardResponse> getOrganizations(

@@ -3013,67 +3013,6 @@ proto.Softcorp.DashboardPublicServicePromiseClient.prototype.ping =
  *   !proto.Softcorp.PublicDashboardRequest,
  *   !proto.Softcorp.PublicDashboardResponse>}
  */
-const methodDescriptor_DashboardPublicService_SetCookie = new grpc.web.MethodDescriptor(
-  '/Softcorp.DashboardPublicService/SetCookie',
-  grpc.web.MethodType.UNARY,
-  proto.Softcorp.PublicDashboardRequest,
-  proto.Softcorp.PublicDashboardResponse,
-  /**
-   * @param {!proto.Softcorp.PublicDashboardRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.Softcorp.PublicDashboardResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.Softcorp.PublicDashboardRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Softcorp.PublicDashboardResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Softcorp.PublicDashboardResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.Softcorp.DashboardPublicServiceClient.prototype.setCookie =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/Softcorp.DashboardPublicService/SetCookie',
-      request,
-      metadata || {},
-      methodDescriptor_DashboardPublicService_SetCookie,
-      callback);
-};
-
-
-/**
- * @param {!proto.Softcorp.PublicDashboardRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.Softcorp.PublicDashboardResponse>}
- *     Promise that resolves to the response
- */
-proto.Softcorp.DashboardPublicServicePromiseClient.prototype.setCookie =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/Softcorp.DashboardPublicService/SetCookie',
-      request,
-      metadata || {},
-      methodDescriptor_DashboardPublicService_SetCookie);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.Softcorp.PublicDashboardRequest,
- *   !proto.Softcorp.PublicDashboardResponse>}
- */
 const methodDescriptor_DashboardPublicService_CreateOrganization = new grpc.web.MethodDescriptor(
   '/Softcorp.DashboardPublicService/CreateOrganization',
   grpc.web.MethodType.UNARY,
