@@ -1819,6 +1819,7 @@ var CollaborationAdminService_ServiceDesc = grpc.ServiceDesc{
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type DashboardPublicServiceClient interface {
 	Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	SetCookie(ctx context.Context, in *PublicDashboardRequest, opts ...grpc.CallOption) (*PublicDashboardResponse, error)
 	CreateOrganization(ctx context.Context, in *PublicDashboardRequest, opts ...grpc.CallOption) (*PublicDashboardResponse, error)
 	GetOrganizations(ctx context.Context, in *PublicDashboardRequest, opts ...grpc.CallOption) (*PublicDashboardResponse, error)
 	UpdateOrganizationDetails(ctx context.Context, in *PublicDashboardRequest, opts ...grpc.CallOption) (*PublicDashboardResponse, error)
@@ -1849,6 +1850,15 @@ func NewDashboardPublicServiceClient(cc grpc.ClientConnInterface) DashboardPubli
 func (c *dashboardPublicServiceClient) Ping(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
 	err := c.cc.Invoke(ctx, "/Softcorp.DashboardPublicService/Ping", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dashboardPublicServiceClient) SetCookie(ctx context.Context, in *PublicDashboardRequest, opts ...grpc.CallOption) (*PublicDashboardResponse, error) {
+	out := new(PublicDashboardResponse)
+	err := c.cc.Invoke(ctx, "/Softcorp.DashboardPublicService/SetCookie", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -2013,6 +2023,7 @@ func (c *dashboardPublicServiceClient) DeleteCollaboration(ctx context.Context, 
 // for forward compatibility
 type DashboardPublicServiceServer interface {
 	Ping(context.Context, *Request) (*Response, error)
+	SetCookie(context.Context, *PublicDashboardRequest) (*PublicDashboardResponse, error)
 	CreateOrganization(context.Context, *PublicDashboardRequest) (*PublicDashboardResponse, error)
 	GetOrganizations(context.Context, *PublicDashboardRequest) (*PublicDashboardResponse, error)
 	UpdateOrganizationDetails(context.Context, *PublicDashboardRequest) (*PublicDashboardResponse, error)
@@ -2038,6 +2049,9 @@ type UnimplementedDashboardPublicServiceServer struct {
 
 func (UnimplementedDashboardPublicServiceServer) Ping(context.Context, *Request) (*Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
+}
+func (UnimplementedDashboardPublicServiceServer) SetCookie(context.Context, *PublicDashboardRequest) (*PublicDashboardResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SetCookie not implemented")
 }
 func (UnimplementedDashboardPublicServiceServer) CreateOrganization(context.Context, *PublicDashboardRequest) (*PublicDashboardResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateOrganization not implemented")
@@ -2116,6 +2130,24 @@ func _DashboardPublicService_Ping_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DashboardPublicServiceServer).Ping(ctx, req.(*Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DashboardPublicService_SetCookie_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PublicDashboardRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DashboardPublicServiceServer).SetCookie(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Softcorp.DashboardPublicService/SetCookie",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DashboardPublicServiceServer).SetCookie(ctx, req.(*PublicDashboardRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -2436,6 +2468,10 @@ var DashboardPublicService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Ping",
 			Handler:    _DashboardPublicService_Ping_Handler,
+		},
+		{
+			MethodName: "SetCookie",
+			Handler:    _DashboardPublicService_SetCookie_Handler,
 		},
 		{
 			MethodName: "CreateOrganization",
