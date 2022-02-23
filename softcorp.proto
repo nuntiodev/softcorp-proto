@@ -6,32 +6,8 @@ option go_package = "./go_softcorp";
 
 import "google/protobuf/timestamp.proto";
 
-service ConnectPublicService {
-    rpc Ping(Request) returns (Response) {}
-    rpc ValidateLoginChallenge(AuthPublicRequest) returns (AuthPublicResponse) {}
-    rpc ValidateUserCredentials(AuthPublicRequest) returns (AuthPublicResponse) {}
-    rpc ValidateConsentChallenge(AuthPublicRequest) returns (AuthPublicResponse) {}
-    rpc GiveConsent(AuthPublicRequest) returns (AuthPublicResponse) {}
-    rpc Logout(AuthPublicRequest) returns (AuthPublicResponse) {}
-    rpc CreateUser(AuthPublicRequest) returns (AuthPublicResponse) {}
-    rpc SendResetEmail(AuthPublicRequest) returns (AuthPublicResponse) {}
-    rpc ResetPassword(AuthPublicRequest) returns (AuthPublicResponse) {}
-}
-
-service ConnectAdminService {
-    rpc Ping(Request) returns (Response) {}
-    rpc CreateApp(ConnectAdminRequest) returns (ConnectAdminResponse) {}
-    rpc GetAppById(ConnectAdminRequest) returns (ConnectAdminResponse) {}
-    rpc UpdateAppDetails(ConnectAdminRequest) returns (ConnectAdminResponse) {}
-    rpc UpdateAppOAuth(ConnectAdminRequest) returns (ConnectAdminResponse) {}
-    rpc ResetAppOAuth(ConnectAdminRequest) returns (ConnectAdminResponse) {}
-    rpc UpdateAppSecurity(ConnectAdminRequest) returns (ConnectAdminResponse) {}
-    rpc GetAppMetrics(ConnectAdminRequest) returns (ConnectAdminResponse) {}
-    rpc DeleteApp(ConnectAdminRequest) returns (ConnectAdminResponse) {}
-}
-
 service UserService {
-    rpc Ping(Request) returns UserResponse) {}
+    rpc HeartBeat(Request) returns (Response) {}
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
@@ -41,245 +17,17 @@ service UserService {
     rpc Delete(UserRequest) returns (UserResponse) {}
 }
 
-service CollaborationPublicService{
-        rpc Ping(Request) returns (Response) {}
-}
-
-service CollaborationAdminService {
-    rpc Ping(Request) returns (Response) {}
-    rpc InitCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc CreateCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc GetCollaborationById(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc GetCollaborationsByObjectId(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc GetUserCollaborations(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc GetUserObjectCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc AcceptCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc DeleteCollaboration(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc DeleteCollaborationsByObjectId(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-    rpc DeleteUserCollaborations(AdminCollaborationRequest) returns (AdminCollaborationResponse) {}
-}
-
-service DashboardPublicService {
-    rpc Ping(Request) returns (Response) {}
-    rpc CreateOrganization(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc GetOrganizations(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc UpdateOrganizationDetails(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc DeleteOrganization(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc CreateConnectApp(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc GetConnectAppsByOrgId(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc GetConnectAppById(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc UpdateConnectAppDetails(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc UpdateConnectAppOAuth(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc ResetConnectAppOAuth(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc UpdateConnectAppSecurity(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc GetAppMetrics(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc DeleteConnectApp(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc InviteCollaborator(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc GetCollaborations(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc AcceptCollaboration(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-    rpc DeleteCollaboration(PublicDashboardRequest) returns (PublicDashboardResponse) {}
-}
-
-enum Timespan {
-    INVALID_TIMESPAN = 0;
-    TIMESPAN_DAY = 1;
-    TIMESPAN_WEEK = 2;
-    TIMESPAN_MONTH = 3;
-    TIMESPAN_YEAR = 4;
-    TIMESPAN_ALL = 5;
-}
-
-enum Gender {
-    INVALID_GENDER = 0;
-    MALE = 1;
-    FEMALE = 2;
-    OTHER = 3;
-}
-
-enum ScopeType {
-    INVALID_SCOPE = 0;
-    DEFAULT_SCOPE = 1;
-    OFFLINE_ACCESS_SCOPE = 2;
-    GENDER_SCOPE = 3;
-    NAME_SCOPE = 4;
-    BIRTHDAY_SCOPE = 5;
-    PREFERRED_LANGUAGE_SCOPE = 6;
-    COUNTRY_SCOPE = 7;
-}
-enum AgeGroup {
-    AGE_GROUP_INVALID = 0;
-    AGE_GROUP_1_12 = 1;
-    AGE_GROUP_13_19 = 2;
-    AGE_GROUP_20_29 = 3;
-    AGE_GROUP_30_39 = 4;
-    AGE_GROUP_40_49 = 5;
-    AGE_GROUP_50_59 = 6;
-    AGE_GROUP_60_69 = 7;
-    AGE_GROUP_70_79 = 8;
-    AGE_GROUP_80_89 = 9;
-    AGE_GROUP_90_99 = 10;
-    AGE_GROUP_100_120 = 11;
-}
-
-enum CollaborationType {
-    INVALID_COLLABORATION = 0;
-    ORGANIZATION_COLLABORATION = 1;
-    CONNECT_COLLABORATION = 2;
-}
-
-enum CollaborationRole {
-    INVALID_COLLABORATION_ROLE = 0;
-    OWNER = 1;
-    VIEWER = 2;
-    EDITOR = 3;
-    ADMIN = 4;
-}
-
-message ConnectMetric {
-    google.protobuf.Timestamp date = 1;
-    int32 numberOfRequests = 2;
-    int32 numberOfConsentTrue = 3;
-    int32 numberOfConsentFalse = 4;
-    int32 numberOfAgeGroup1To12 = 5;
-    int32 numberOfAgeGroup13To19 = 6;
-    int32 numberOfAgeGroup20To29 = 7;
-    int32 numberOfAgeGroup30To39 = 8;
-    int32 numberOfAgeGroup40To49 = 9;
-    int32 numberOfAgeGroup50To59 = 10;
-    int32 numberOfAgeGroup60To69 = 11;
-    int32 numberOfAgeGroup70To79 = 12;
-    int32 numberOfAgeGroup80To89 = 13;
-    int32 numberOfAgeGroup90To99 = 14;
-    int32 numberOfAgeGroup100To120 = 15;
-    int32 numberOfFemales = 16;
-    int32 numberOfMales = 17;
-    int32 numberOfOthers = 18;
-    int32 amountFromDk = 19;
-    int32 amountFromNo = 20;
-    int32 amountFromDe = 21;
-}
-
-message ConnectMetrics {
-    repeated ConnectMetric metrics = 1;
-}
-
-message Collaboration {
-    string id = 1;
-    string email = 2;
-    string userId = 3;
-    string objectId = 4; 
-    CollaborationType collaborationType = 5;
-    bool accepted = 6;
-    string hashedCode = 7;
-    CollaborationRole role = 8;
-    google.protobuf.Timestamp sendAt = 9;
-    google.protobuf.Timestamp updatedAt = 10;
-    google.protobuf.Timestamp acceptedAt = 11;
-}
-
-message Organization {
-    string id = 1;
-    string ownerId = 2;
-    string organizationName = 3;
-    string contactEmail = 4; 
-    google.protobuf.Timestamp createdAt = 5;
-    google.protobuf.Timestamp updatedAt = 6;
-    bool isOwner = 7;
-}
-
-message Scope {
-    ScopeType scopeType = 1;
-    bool readId = 2;
-    bool readEmail = 3;
-    bool readGender = 4;
-    bool readCreatedAt = 5;
-    bool offlineAccess = 6;
-    bool readName = 7;
-    bool readBirthday = 8;
-    bool readCountry = 9;
-    bool readPrefLangauge = 10;
-    string name = 11;
-    string key = 12;
-}
-
-enum GrantType {
-    INVALID_GRANT = 0;
-    AUTH_GRANT = 1;
-    REFRESH_GRANT = 2;
-}
-
-message Grant {
-    GrantType grantType = 1;
-    string name = 2;
-}
-
-enum ResponeType {
-    INVALID_RESPONSE = 0;
-    CODE_RESPONSE = 1;
-    TOKEN_RESPONSE = 2;
-    ID_RESPONSE = 3;
-}
-
-message OauthResponse {
-    ResponeType responseType = 1;
-    string name = 2;
-}
-
-enum LanguageCodeType {
-    INVALID_LANGUAGE = 0 ;
-    LANGUAGE_DK = 1;
-    LANGUAGE_EN = 2;
-    LANGUAGE_DE = 3;
-}
-
-message LanguageCode {
-    LanguageCodeType languageCodeType = 1;
-    string name = 2;
-}
-
-enum CountryCodeType {
-    INVALID_COUNTRY = 0;
-    COUTRY_DK = 1;
-    COUNTRY_NO = 2;
-    COUNTRY_DE = 3;    
-}
-
-message CountryCode {
-    CountryCodeType countryCodeType = 1;
-    string name = 2;
-}
-
-enum SsnProviderType {
-    INVALID = 0;
-    MIT_ID = 1;
-}
-
-message SsnProvider {
-    SsnProviderType ssnProviderType = 1;
-    string name = 2;
-}
-
-message Ssn {
-    string ssn = 1;
-    string ssnHash = 2;
-    string ssnIdentifier = 3;
-    SsnProvider ssnProvider = 4;
-}
-
 message User {
     string id = 1;
-    string email = 2;
-    string password = 3;
-    Gender gender = 4;
-    google.protobuf.Timestamp birthday = 5;
-    CountryCode country = 6;
+    string name = 2;
+    string email = 3;
+    string password = 4;
+    Gender gender = 5;
+    string country = 6;
     bool blocked = 7;
-    LanguageCode preferredLanguage = 8;
-    string name = 9;
-	google.protobuf.Timestamp createdAt = 10;
-    google.protobuf.Timestamp updatedAt = 11;
-    string ssnId = 12; 
-    string ssnHash = 13;
+    google.protobuf.Timestamp birthdate = 8;
+	google.protobuf.Timestamp createdAt = 9;
+    google.protobuf.Timestamp updatedAt = 10;
 }
 
 message ClientMetadata {
@@ -292,107 +40,21 @@ message ClientMetadata {
     repeated CountryCode allowedCountries = 7;
 }
 
-message ClientApp {
-    string id = 1;
-    string name = 2;
-    string password = 3;
-    string contactEmail = 4;
-    string ownerId = 5;
-    string appWebsite = 6;
-    string logoUrl = 7;
-    string termsUrl = 8;
-    ClientMetadata clientMetadata = 9;
-    repeated string audience = 10;
-    repeated Scope scopes = 11;
-    repeated Grant grants = 12;
-    repeated OauthResponse responses = 13;
-    repeated string callbacks = 14;
-    google.protobuf.Timestamp createdAt = 15;
-    google.protobuf.Timestamp updatedAt = 16;
-    repeated Scope availableScopes = 17;
-    repeated Grant availableGrants = 18;
-    repeated OauthResponse availableResponses = 19;
-    repeated CountryCode availableCountries = 20;
-    repeated Scope advancedScopes = 21;
-}
-
 message UserRequest {
     User user = 1;
     string accessToken = 2;
-    int32 from = 3;
-    int32 to = 4;
+    UserFilter filter = 3;
+}
+
+message UserFilter {
+    int32 from = 1;
+    int32 to = 2;
+    repeated Gender genders = 3; 
 }
 
 message UserResponse {
     User user = 1;
     repeated User users = 2;
-}
-
-message AuthPublicRequest {
-    string challenge = 1;
-    string email = 2;
-    string password = 3;
-    Gender gender = 4;
-    bool consent = 5;
-    string jwtIdToken = 6;
-    SsnProvider ssnProvider = 7;
-}
-
-message AuthPublicResponse {
-    ClientApp client = 1;
-    string nameOfUser = 2;
-    string redirectAddr = 3;
-}
-
-message ConnectAdminRequest {
-    ClientApp app = 1;
-    bool overwriteId = 2;
-    Timespan timespan = 3;
-}
-
-message ConnectAdminResponse {
-    ClientApp app = 1;
-    map<int32, ConnectMetrics> metrics = 2;
-}
-
-message PublicDashboardRequest {
-    string accessToken = 1;
-    Organization organization = 2;
-    ClientApp connectApp = 3;
-    Timespan timespan = 4;
-    Collaboration collaboration = 5;
-    string secret = 6;
-    User currentUser = 7;
-}
-
-message PublicDashboardResponse {
-    Organization organization = 1;
-    repeated Organization organizations = 2;
-    Collaboration collaboration = 3;
-    repeated Collaboration collaborations = 4;
-    string secret = 5;
-    ClientApp connectApp = 6;
-    repeated ClientApp connectApps = 7;
-    map<int32, ConnectMetrics> metrics = 8;
-}
-
-
-message AdminCollaborationRequest {
-    Organization organization = 1;
-    ClientApp connectApp = 2;
-    string accessToken = 3;
-    Collaboration collaboration = 4;
-    bool acceptCollaboration = 5;
-    string secret = 6;
-    bool onlyConnect = 7;
-    bool onlyOrganization = 8;
-    bool onlyAccepted = 9;
-}
-
-message AdminCollaborationResponse {
-    Collaboration collaboration = 1;
-    repeated Collaboration collaborations = 2;
-    string secret = 3;
 }
 
 message Request {}
