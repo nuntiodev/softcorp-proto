@@ -7725,7 +7725,8 @@ proto.Softcorp.PublicDashboardRequest.toObject = function(includeInstance, msg) 
     connectapp: (f = msg.getConnectapp()) && proto.Softcorp.ClientApp.toObject(includeInstance, f),
     timespan: jspb.Message.getFieldWithDefault(msg, 4, 0),
     collaboration: (f = msg.getCollaboration()) && proto.Softcorp.Collaboration.toObject(includeInstance, f),
-    secret: jspb.Message.getFieldWithDefault(msg, 6, "")
+    secret: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    currentuser: (f = msg.getCurrentuser()) && proto.Softcorp.User.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7788,6 +7789,11 @@ proto.Softcorp.PublicDashboardRequest.deserializeBinaryFromReader = function(msg
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setSecret(value);
+      break;
+    case 7:
+      var value = new proto.Softcorp.User;
+      reader.readMessage(value,proto.Softcorp.User.deserializeBinaryFromReader);
+      msg.setCurrentuser(value);
       break;
     default:
       reader.skipField();
@@ -7861,6 +7867,14 @@ proto.Softcorp.PublicDashboardRequest.serializeBinaryToWriter = function(message
     writer.writeString(
       6,
       f
+    );
+  }
+  f = message.getCurrentuser();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.Softcorp.User.serializeBinaryToWriter
     );
   }
 };
@@ -8028,6 +8042,43 @@ proto.Softcorp.PublicDashboardRequest.prototype.getSecret = function() {
  */
 proto.Softcorp.PublicDashboardRequest.prototype.setSecret = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional User currentUser = 7;
+ * @return {?proto.Softcorp.User}
+ */
+proto.Softcorp.PublicDashboardRequest.prototype.getCurrentuser = function() {
+  return /** @type{?proto.Softcorp.User} */ (
+    jspb.Message.getWrapperField(this, proto.Softcorp.User, 7));
+};
+
+
+/**
+ * @param {?proto.Softcorp.User|undefined} value
+ * @return {!proto.Softcorp.PublicDashboardRequest} returns this
+*/
+proto.Softcorp.PublicDashboardRequest.prototype.setCurrentuser = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.Softcorp.PublicDashboardRequest} returns this
+ */
+proto.Softcorp.PublicDashboardRequest.prototype.clearCurrentuser = function() {
+  return this.setCurrentuser(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.Softcorp.PublicDashboardRequest.prototype.hasCurrentuser = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

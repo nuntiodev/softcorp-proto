@@ -514,11 +514,12 @@ const PublicDashboardRequest$json = const {
     const {'1': 'timespan', '3': 4, '4': 1, '5': 14, '6': '.Softcorp.Timespan', '10': 'timespan'},
     const {'1': 'collaboration', '3': 5, '4': 1, '5': 11, '6': '.Softcorp.Collaboration', '10': 'collaboration'},
     const {'1': 'secret', '3': 6, '4': 1, '5': 9, '10': 'secret'},
+    const {'1': 'currentUser', '3': 7, '4': 1, '5': 11, '6': '.Softcorp.User', '10': 'currentUser'},
   ],
 };
 
 /// Descriptor for `PublicDashboardRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List publicDashboardRequestDescriptor = $convert.base64Decode('ChZQdWJsaWNEYXNoYm9hcmRSZXF1ZXN0EiAKC2FjY2Vzc1Rva2VuGAEgASgJUgthY2Nlc3NUb2tlbhI6Cgxvcmdhbml6YXRpb24YAiABKAsyFi5Tb2Z0Y29ycC5Pcmdhbml6YXRpb25SDG9yZ2FuaXphdGlvbhIzCgpjb25uZWN0QXBwGAMgASgLMhMuU29mdGNvcnAuQ2xpZW50QXBwUgpjb25uZWN0QXBwEi4KCHRpbWVzcGFuGAQgASgOMhIuU29mdGNvcnAuVGltZXNwYW5SCHRpbWVzcGFuEj0KDWNvbGxhYm9yYXRpb24YBSABKAsyFy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uUg1jb2xsYWJvcmF0aW9uEhYKBnNlY3JldBgGIAEoCVIGc2VjcmV0');
+final $typed_data.Uint8List publicDashboardRequestDescriptor = $convert.base64Decode('ChZQdWJsaWNEYXNoYm9hcmRSZXF1ZXN0EiAKC2FjY2Vzc1Rva2VuGAEgASgJUgthY2Nlc3NUb2tlbhI6Cgxvcmdhbml6YXRpb24YAiABKAsyFi5Tb2Z0Y29ycC5Pcmdhbml6YXRpb25SDG9yZ2FuaXphdGlvbhIzCgpjb25uZWN0QXBwGAMgASgLMhMuU29mdGNvcnAuQ2xpZW50QXBwUgpjb25uZWN0QXBwEi4KCHRpbWVzcGFuGAQgASgOMhIuU29mdGNvcnAuVGltZXNwYW5SCHRpbWVzcGFuEj0KDWNvbGxhYm9yYXRpb24YBSABKAsyFy5Tb2Z0Y29ycC5Db2xsYWJvcmF0aW9uUg1jb2xsYWJvcmF0aW9uEhYKBnNlY3JldBgGIAEoCVIGc2VjcmV0EjAKC2N1cnJlbnRVc2VyGAcgASgLMg4uU29mdGNvcnAuVXNlclILY3VycmVudFVzZXI=');
 @$core.Deprecated('Use publicDashboardResponseDescriptor instead')
 const PublicDashboardResponse$json = const {
   '1': 'PublicDashboardResponse',

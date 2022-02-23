@@ -2553,6 +2553,7 @@ class PublicDashboardRequest extends $pb.GeneratedMessage {
     ..e<Timespan>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timespan', $pb.PbFieldType.OE, defaultOrMaker: Timespan.INVALID_TIMESPAN, valueOf: Timespan.valueOf, enumValues: Timespan.values)
     ..aOM<Collaboration>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collaboration', subBuilder: Collaboration.create)
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'secret')
+    ..aOM<User>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currentUser', protoName: 'currentUser', subBuilder: User.create)
     ..hasRequiredFields = false
   ;
 
@@ -2564,6 +2565,7 @@ class PublicDashboardRequest extends $pb.GeneratedMessage {
     Timespan? timespan,
     Collaboration? collaboration,
     $core.String? secret,
+    User? currentUser,
   }) {
     final _result = create();
     if (accessToken != null) {
@@ -2583,6 +2585,9 @@ class PublicDashboardRequest extends $pb.GeneratedMessage {
     }
     if (secret != null) {
       _result.secret = secret;
+    }
+    if (currentUser != null) {
+      _result.currentUser = currentUser;
     }
     return _result;
   }
@@ -2666,6 +2671,17 @@ class PublicDashboardRequest extends $pb.GeneratedMessage {
   $core.bool hasSecret() => $_has(5);
   @$pb.TagNumber(6)
   void clearSecret() => clearField(6);
+
+  @$pb.TagNumber(7)
+  User get currentUser => $_getN(6);
+  @$pb.TagNumber(7)
+  set currentUser(User v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasCurrentUser() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearCurrentUser() => clearField(7);
+  @$pb.TagNumber(7)
+  User ensureCurrentUser() => $_ensure(6);
 }
 
 class PublicDashboardResponse extends $pb.GeneratedMessage {
