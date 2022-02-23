@@ -30,22 +30,15 @@ service ConnectAdminService {
     rpc DeleteApp(ConnectAdminRequest) returns (ConnectAdminResponse) {}
 }
 
-service UserPublicService {
-    rpc Ping(Request) returns (Response) {}
-    rpc GetUserByToken(PublicUserRequest) returns (PublicUserResponse) {}
-    rpc UpdateUserPassword(PublicUserRequest) returns (PublicUserResponse) {}
-    rpc UpdateUserEmail(PublicUserRequest) returns (PublicUserResponse) {}
-    rpc UpdateUserGender(PublicUserRequest) returns (PublicUserResponse) {}
-    rpc DeleteUser(PublicUserRequest) returns (PublicUserResponse) {}
-}
-
-service UserAdminService {
-    rpc Ping(Request) returns (Response) {}
-    rpc CreateUser(AdminUserRequest) returns (AdminUserResponse) {}
-    rpc GetUserById(AdminUserRequest) returns (AdminUserResponse) {}
-    rpc GetUserByEmail(AdminUserRequest) returns (AdminUserResponse) {}
-    rpc GetBulkUsersById(AdminUserRequest) returns (AdminUserResponse) {}
-    rpc GetBulkUsersByEmail(AdminUserRequest) returns (AdminUserResponse) {}
+service UserService {
+    rpc Ping(Request) returns UserResponse) {}
+    rpc Create(UserRequest) returns (UserResponse) {}
+    rpc Get(UserRequest) returns (UserResponse) {}
+    rpc GetAll(UserRequest) returns (UserResponse) {}
+    rpc UpdatePassword(UserRequest) returns (UserResponse) {}
+    rpc UpdateProfile(UserRequest) returns (UserResponse) {}
+    rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
+    rpc Delete(UserRequest) returns (UserResponse) {}
 }
 
 service CollaborationPublicService{
@@ -323,25 +316,14 @@ message ClientApp {
     repeated Scope advancedScopes = 21;
 }
 
-message PublicUserRequest {
-    string token = 1;
-}
-
-message PublicUserResponse {
+message UserRequest {
     User user = 1;
+    string accessToken = 2;
+    int32 from = 3;
+    int32 to = 4;
 }
 
-message AdminUserRequest {
-    string userId = 1;
-    string email = 2;
-    repeated string ids = 3;
-    repeated string emails = 4;
-    bool decrypt = 5;
-    User user = 6;
-    bool overwriteId = 7;
-}
-
-message AdminUserResponse {
+message UserResponse {
     User user = 1;
     repeated User users = 2;
 }
