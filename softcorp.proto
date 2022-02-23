@@ -380,6 +380,7 @@ message PublicDashboardRequest {
     Timespan timespan = 4;
     Collaboration collaboration = 5;
     string secret = 6;
+    User currentUser = 7;
 }
 
 message PublicDashboardResponse {
