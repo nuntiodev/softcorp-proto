@@ -52,6 +52,7 @@ message UserFilter {
         UPDATE_AT = 1;
         BIRTHDATE = 2;
         NAME = 3;
+        EMAIL = 4;
     }
     int32 from = 1;
     int32 to = 2;
