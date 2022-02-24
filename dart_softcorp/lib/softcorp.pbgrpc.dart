@@ -35,6 +35,11 @@ class UserServiceClient extends $grpc.Client {
           '/Softcorp.UserService/UpdatePassword',
           ($0.UserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
+  static final _$updateEmail =
+      $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
+          '/Softcorp.UserService/UpdateEmail',
+          ($0.UserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.UserResponse.fromBuffer(value));
   static final _$updateProfile =
       $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
           '/Softcorp.UserService/UpdateProfile',
@@ -78,6 +83,11 @@ class UserServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.UserResponse> updatePassword($0.UserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updatePassword, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UserResponse> updateEmail($0.UserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateEmail, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> updateProfile($0.UserRequest request,
@@ -137,6 +147,13 @@ abstract class UserServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
         ($0.UserResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
+        'UpdateEmail',
+        updateEmail_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.UserRequest.fromBuffer(value),
+        ($0.UserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.UserRequest, $0.UserResponse>(
         'UpdateProfile',
         updateProfile_Pre,
         false,
@@ -184,6 +201,11 @@ abstract class UserServiceBase extends $grpc.Service {
     return updatePassword(call, await request);
   }
 
+  $async.Future<$0.UserResponse> updateEmail_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
+    return updateEmail(call, await request);
+  }
+
   $async.Future<$0.UserResponse> updateProfile_Pre(
       $grpc.ServiceCall call, $async.Future<$0.UserRequest> request) async {
     return updateProfile(call, await request);
@@ -208,6 +230,8 @@ abstract class UserServiceBase extends $grpc.Service {
   $async.Future<$0.UserResponse> getAll(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updatePassword(
+      $grpc.ServiceCall call, $0.UserRequest request);
+  $async.Future<$0.UserResponse> updateEmail(
       $grpc.ServiceCall call, $0.UserRequest request);
   $async.Future<$0.UserResponse> updateProfile(
       $grpc.ServiceCall call, $0.UserRequest request);

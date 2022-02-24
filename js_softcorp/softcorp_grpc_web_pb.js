@@ -383,6 +383,67 @@ proto.Softcorp.UserServicePromiseClient.prototype.updatePassword =
  *   !proto.Softcorp.UserRequest,
  *   !proto.Softcorp.UserResponse>}
  */
+const methodDescriptor_UserService_UpdateEmail = new grpc.web.MethodDescriptor(
+  '/Softcorp.UserService/UpdateEmail',
+  grpc.web.MethodType.UNARY,
+  proto.Softcorp.UserRequest,
+  proto.Softcorp.UserResponse,
+  /**
+   * @param {!proto.Softcorp.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Softcorp.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Softcorp.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Softcorp.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Softcorp.UserServiceClient.prototype.updateEmail =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Softcorp.UserService/UpdateEmail',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateEmail,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Softcorp.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Softcorp.UserServicePromiseClient.prototype.updateEmail =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Softcorp.UserService/UpdateEmail',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateEmail);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Softcorp.UserRequest,
+ *   !proto.Softcorp.UserResponse>}
+ */
 const methodDescriptor_UserService_UpdateProfile = new grpc.web.MethodDescriptor(
   '/Softcorp.UserService/UpdateProfile',
   grpc.web.MethodType.UNARY,

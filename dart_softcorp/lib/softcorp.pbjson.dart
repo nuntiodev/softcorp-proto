@@ -32,26 +32,28 @@ const User$json = const {
     const {'1': 'password', '3': 5, '4': 1, '5': 9, '10': 'password'},
     const {'1': 'gender', '3': 6, '4': 1, '5': 14, '6': '.Softcorp.Gender', '10': 'gender'},
     const {'1': 'country', '3': 7, '4': 1, '5': 9, '10': 'country'},
-    const {'1': 'blocked', '3': 8, '4': 1, '5': 8, '10': 'blocked'},
-    const {'1': 'birthdate', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
-    const {'1': 'createdAt', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updatedAt', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'image', '3': 8, '4': 1, '5': 9, '10': 'image'},
+    const {'1': 'blocked', '3': 9, '4': 1, '5': 8, '10': 'blocked'},
+    const {'1': 'birthdate', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
+    const {'1': 'createdAt', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updatedAt', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBImCg5vcmdhbml6YXRpb25JZBgCIAEoCVIOb3JnYW5pemF0aW9uSWQSEgoEbmFtZRgDIAEoCVIEbmFtZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSGgoIcGFzc3dvcmQYBSABKAlSCHBhc3N3b3JkEigKBmdlbmRlchgGIAEoDjIQLlNvZnRjb3JwLkdlbmRlclIGZ2VuZGVyEhgKB2NvdW50cnkYByABKAlSB2NvdW50cnkSGAoHYmxvY2tlZBgIIAEoCFIHYmxvY2tlZBI4CgliaXJ0aGRhdGUYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgliaXJ0aGRhdGUSOAoJY3JlYXRlZEF0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjgKCXVwZGF0ZWRBdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBImCg5vcmdhbml6YXRpb25JZBgCIAEoCVIOb3JnYW5pemF0aW9uSWQSEgoEbmFtZRgDIAEoCVIEbmFtZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSGgoIcGFzc3dvcmQYBSABKAlSCHBhc3N3b3JkEigKBmdlbmRlchgGIAEoDjIQLlNvZnRjb3JwLkdlbmRlclIGZ2VuZGVyEhgKB2NvdW50cnkYByABKAlSB2NvdW50cnkSFAoFaW1hZ2UYCCABKAlSBWltYWdlEhgKB2Jsb2NrZWQYCSABKAhSB2Jsb2NrZWQSOAoJYmlydGhkYXRlGAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJYmlydGhkYXRlEjgKCWNyZWF0ZWRBdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWNyZWF0ZWRBdBI4Cgl1cGRhdGVkQXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgl1cGRhdGVkQXQ=');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',
   '2': const [
     const {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.Softcorp.User', '10': 'user'},
-    const {'1': 'filter', '3': 2, '4': 1, '5': 11, '6': '.Softcorp.UserFilter', '10': 'filter'},
+    const {'1': 'update', '3': 2, '4': 1, '5': 11, '6': '.Softcorp.User', '10': 'update'},
+    const {'1': 'filter', '3': 3, '4': 1, '5': 11, '6': '.Softcorp.UserFilter', '10': 'filter'},
   ],
 };
 
 /// Descriptor for `UserRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIiCgR1c2VyGAEgASgLMg4uU29mdGNvcnAuVXNlclIEdXNlchIsCgZmaWx0ZXIYAiABKAsyFC5Tb2Z0Y29ycC5Vc2VyRmlsdGVyUgZmaWx0ZXI=');
+final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIiCgR1c2VyGAEgASgLMg4uU29mdGNvcnAuVXNlclIEdXNlchImCgZ1cGRhdGUYAiABKAsyDi5Tb2Z0Y29ycC5Vc2VyUgZ1cGRhdGUSLAoGZmlsdGVyGAMgASgLMhQuU29mdGNvcnAuVXNlckZpbHRlclIGZmlsdGVy');
 @$core.Deprecated('Use userFilterDescriptor instead')
 const UserFilter$json = const {
   '1': 'UserFilter',

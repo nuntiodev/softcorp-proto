@@ -24,10 +24,11 @@ class User extends $pb.GeneratedMessage {
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..e<Gender>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gender', $pb.PbFieldType.OE, defaultOrMaker: Gender.INVALID_GENDER, valueOf: Gender.valueOf, enumValues: Gender.values)
     ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country')
-    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blocked')
-    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'image')
+    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blocked')
+    ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -40,6 +41,7 @@ class User extends $pb.GeneratedMessage {
     $core.String? password,
     Gender? gender,
     $core.String? country,
+    $core.String? image,
     $core.bool? blocked,
     $1.Timestamp? birthdate,
     $1.Timestamp? createdAt,
@@ -66,6 +68,9 @@ class User extends $pb.GeneratedMessage {
     }
     if (country != null) {
       _result.country = country;
+    }
+    if (image != null) {
+      _result.image = image;
     }
     if (blocked != null) {
       _result.blocked = blocked;
@@ -166,63 +171,77 @@ class User extends $pb.GeneratedMessage {
   void clearCountry() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.bool get blocked => $_getBF(7);
+  $core.String get image => $_getSZ(7);
   @$pb.TagNumber(8)
-  set blocked($core.bool v) { $_setBool(7, v); }
+  set image($core.String v) { $_setString(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasBlocked() => $_has(7);
+  $core.bool hasImage() => $_has(7);
   @$pb.TagNumber(8)
-  void clearBlocked() => clearField(8);
+  void clearImage() => clearField(8);
 
   @$pb.TagNumber(9)
-  $1.Timestamp get birthdate => $_getN(8);
+  $core.bool get blocked => $_getBF(8);
   @$pb.TagNumber(9)
-  set birthdate($1.Timestamp v) { setField(9, v); }
+  set blocked($core.bool v) { $_setBool(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasBirthdate() => $_has(8);
+  $core.bool hasBlocked() => $_has(8);
   @$pb.TagNumber(9)
-  void clearBirthdate() => clearField(9);
-  @$pb.TagNumber(9)
-  $1.Timestamp ensureBirthdate() => $_ensure(8);
+  void clearBlocked() => clearField(9);
 
   @$pb.TagNumber(10)
-  $1.Timestamp get createdAt => $_getN(9);
+  $1.Timestamp get birthdate => $_getN(9);
   @$pb.TagNumber(10)
-  set createdAt($1.Timestamp v) { setField(10, v); }
+  set birthdate($1.Timestamp v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasCreatedAt() => $_has(9);
+  $core.bool hasBirthdate() => $_has(9);
   @$pb.TagNumber(10)
-  void clearCreatedAt() => clearField(10);
+  void clearBirthdate() => clearField(10);
   @$pb.TagNumber(10)
-  $1.Timestamp ensureCreatedAt() => $_ensure(9);
+  $1.Timestamp ensureBirthdate() => $_ensure(9);
 
   @$pb.TagNumber(11)
-  $1.Timestamp get updatedAt => $_getN(10);
+  $1.Timestamp get createdAt => $_getN(10);
   @$pb.TagNumber(11)
-  set updatedAt($1.Timestamp v) { setField(11, v); }
+  set createdAt($1.Timestamp v) { setField(11, v); }
   @$pb.TagNumber(11)
-  $core.bool hasUpdatedAt() => $_has(10);
+  $core.bool hasCreatedAt() => $_has(10);
   @$pb.TagNumber(11)
-  void clearUpdatedAt() => clearField(11);
+  void clearCreatedAt() => clearField(11);
   @$pb.TagNumber(11)
-  $1.Timestamp ensureUpdatedAt() => $_ensure(10);
+  $1.Timestamp ensureCreatedAt() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $1.Timestamp get updatedAt => $_getN(11);
+  @$pb.TagNumber(12)
+  set updatedAt($1.Timestamp v) { setField(12, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasUpdatedAt() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearUpdatedAt() => clearField(12);
+  @$pb.TagNumber(12)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(11);
 }
 
 class UserRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Softcorp'), createEmptyInstance: create)
     ..aOM<User>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: User.create)
-    ..aOM<UserFilter>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: UserFilter.create)
+    ..aOM<User>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'update', subBuilder: User.create)
+    ..aOM<UserFilter>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: UserFilter.create)
     ..hasRequiredFields = false
   ;
 
   UserRequest._() : super();
   factory UserRequest({
     User? user,
+    User? update,
     UserFilter? filter,
   }) {
     final _result = create();
     if (user != null) {
       _result.user = user;
+    }
+    if (update != null) {
+      _result.update = update;
     }
     if (filter != null) {
       _result.filter = filter;
@@ -262,15 +281,26 @@ class UserRequest extends $pb.GeneratedMessage {
   User ensureUser() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  UserFilter get filter => $_getN(1);
+  User get update => $_getN(1);
   @$pb.TagNumber(2)
-  set filter(UserFilter v) { setField(2, v); }
+  set update(User v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasFilter() => $_has(1);
+  $core.bool hasUpdate() => $_has(1);
   @$pb.TagNumber(2)
-  void clearFilter() => clearField(2);
+  void clearUpdate() => clearField(2);
   @$pb.TagNumber(2)
-  UserFilter ensureFilter() => $_ensure(1);
+  User ensureUpdate() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  UserFilter get filter => $_getN(2);
+  @$pb.TagNumber(3)
+  set filter(UserFilter v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasFilter() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearFilter() => clearField(3);
+  @$pb.TagNumber(3)
+  UserFilter ensureFilter() => $_ensure(2);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
