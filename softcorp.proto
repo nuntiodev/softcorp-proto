@@ -47,9 +47,16 @@ message UserRequest {
 }
 
 message UserFilter {
+    enum SortBy {
+        CREATED_AT = 0;
+        UPDATE_AT = 1;
+        BIRTHDATE = 2;
+        NAME = 3;
+    }
     int32 from = 1;
     int32 to = 2;
-    repeated Gender genders = 3; 
+    repeated Gender genders = 3;
+    SortBy sort = 4;
 }
 
 message UserResponse {
