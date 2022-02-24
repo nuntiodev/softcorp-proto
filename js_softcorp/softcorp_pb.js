@@ -967,7 +967,8 @@ proto.Softcorp.UserFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
     from: jspb.Message.getFieldWithDefault(msg, 1, 0),
     to: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    sort: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    sort: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    organizationid: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1016,6 +1017,10 @@ proto.Softcorp.UserFilter.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {!proto.Softcorp.UserFilter.SortBy} */ (reader.readEnum());
       msg.setSort(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrganizationid(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1063,6 +1068,13 @@ proto.Softcorp.UserFilter.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0.0) {
     writer.writeEnum(
       3,
+      f
+    );
+  }
+  f = message.getOrganizationid();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -1131,6 +1143,24 @@ proto.Softcorp.UserFilter.prototype.getSort = function() {
  */
 proto.Softcorp.UserFilter.prototype.setSort = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional string organizationId = 4;
+ * @return {string}
+ */
+proto.Softcorp.UserFilter.prototype.getOrganizationid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Softcorp.UserFilter} returns this
+ */
+proto.Softcorp.UserFilter.prototype.setOrganizationid = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
