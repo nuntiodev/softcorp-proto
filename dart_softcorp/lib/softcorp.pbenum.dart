@@ -33,12 +33,14 @@ class UserFilter_SortBy extends $pb.ProtobufEnum {
   static const UserFilter_SortBy UPDATE_AT = UserFilter_SortBy._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'UPDATE_AT');
   static const UserFilter_SortBy BIRTHDATE = UserFilter_SortBy._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BIRTHDATE');
   static const UserFilter_SortBy NAME = UserFilter_SortBy._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NAME');
+  static const UserFilter_SortBy EMAIL = UserFilter_SortBy._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'EMAIL');
 
   static const $core.List<UserFilter_SortBy> values = <UserFilter_SortBy> [
     CREATED_AT,
     UPDATE_AT,
     BIRTHDATE,
     NAME,
+    EMAIL,
   ];
 
   static final $core.Map<$core.int, UserFilter_SortBy> _byValue = $pb.ProtobufEnum.initByValue(values);
