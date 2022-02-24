@@ -26,20 +26,21 @@ const User$json = const {
   '1': 'User',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
-    const {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
-    const {'1': 'password', '3': 4, '4': 1, '5': 9, '10': 'password'},
-    const {'1': 'gender', '3': 5, '4': 1, '5': 14, '6': '.Softcorp.Gender', '10': 'gender'},
-    const {'1': 'country', '3': 6, '4': 1, '5': 9, '10': 'country'},
-    const {'1': 'blocked', '3': 7, '4': 1, '5': 8, '10': 'blocked'},
-    const {'1': 'birthdate', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
-    const {'1': 'createdAt', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updatedAt', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'organizationId', '3': 2, '4': 1, '5': 9, '10': 'organizationId'},
+    const {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
+    const {'1': 'password', '3': 5, '4': 1, '5': 9, '10': 'password'},
+    const {'1': 'gender', '3': 6, '4': 1, '5': 14, '6': '.Softcorp.Gender', '10': 'gender'},
+    const {'1': 'country', '3': 7, '4': 1, '5': 9, '10': 'country'},
+    const {'1': 'blocked', '3': 8, '4': 1, '5': 8, '10': 'blocked'},
+    const {'1': 'birthdate', '3': 9, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
+    const {'1': 'createdAt', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updatedAt', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBISCgRuYW1lGAIgASgJUgRuYW1lEhQKBWVtYWlsGAMgASgJUgVlbWFpbBIaCghwYXNzd29yZBgEIAEoCVIIcGFzc3dvcmQSKAoGZ2VuZGVyGAUgASgOMhAuU29mdGNvcnAuR2VuZGVyUgZnZW5kZXISGAoHY291bnRyeRgGIAEoCVIHY291bnRyeRIYCgdibG9ja2VkGAcgASgIUgdibG9ja2VkEjgKCWJpcnRoZGF0ZRgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWJpcnRoZGF0ZRI4CgljcmVhdGVkQXQYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOAoJdXBkYXRlZEF0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBImCg5vcmdhbml6YXRpb25JZBgCIAEoCVIOb3JnYW5pemF0aW9uSWQSEgoEbmFtZRgDIAEoCVIEbmFtZRIUCgVlbWFpbBgEIAEoCVIFZW1haWwSGgoIcGFzc3dvcmQYBSABKAlSCHBhc3N3b3JkEigKBmdlbmRlchgGIAEoDjIQLlNvZnRjb3JwLkdlbmRlclIGZ2VuZGVyEhgKB2NvdW50cnkYByABKAlSB2NvdW50cnkSGAoHYmxvY2tlZBgIIAEoCFIHYmxvY2tlZBI4CgliaXJ0aGRhdGUYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgliaXJ0aGRhdGUSOAoJY3JlYXRlZEF0GAogASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjgKCXVwZGF0ZWRBdBgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',

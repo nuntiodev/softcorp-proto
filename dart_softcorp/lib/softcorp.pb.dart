@@ -18,21 +18,23 @@ export 'softcorp.pbenum.dart';
 class User extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'User', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Softcorp'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
-    ..e<Gender>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gender', $pb.PbFieldType.OE, defaultOrMaker: Gender.INVALID_GENDER, valueOf: Gender.valueOf, enumValues: Gender.values)
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country')
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blocked')
-    ..aOM<$1.Timestamp>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
-    ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId', protoName: 'organizationId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
+    ..e<Gender>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gender', $pb.PbFieldType.OE, defaultOrMaker: Gender.INVALID_GENDER, valueOf: Gender.valueOf, enumValues: Gender.values)
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'country')
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'blocked')
+    ..aOM<$1.Timestamp>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'birthdate', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt', protoName: 'createdAt', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updatedAt', protoName: 'updatedAt', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
   User._() : super();
   factory User({
     $core.String? id,
+    $core.String? organizationId,
     $core.String? name,
     $core.String? email,
     $core.String? password,
@@ -46,6 +48,9 @@ class User extends $pb.GeneratedMessage {
     final _result = create();
     if (id != null) {
       _result.id = id;
+    }
+    if (organizationId != null) {
+      _result.organizationId = organizationId;
     }
     if (name != null) {
       _result.name = name;
@@ -107,91 +112,100 @@ class User extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get name => $_getSZ(1);
+  $core.String get organizationId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set organizationId($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasName() => $_has(1);
+  $core.bool hasOrganizationId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearOrganizationId() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get email => $_getSZ(2);
+  $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set email($core.String v) { $_setString(2, v); }
+  set name($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasEmail() => $_has(2);
+  $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearEmail() => clearField(3);
+  void clearName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get password => $_getSZ(3);
+  $core.String get email => $_getSZ(3);
   @$pb.TagNumber(4)
-  set password($core.String v) { $_setString(3, v); }
+  set email($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasPassword() => $_has(3);
+  $core.bool hasEmail() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPassword() => clearField(4);
+  void clearEmail() => clearField(4);
 
   @$pb.TagNumber(5)
-  Gender get gender => $_getN(4);
+  $core.String get password => $_getSZ(4);
   @$pb.TagNumber(5)
-  set gender(Gender v) { setField(5, v); }
+  set password($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasGender() => $_has(4);
+  $core.bool hasPassword() => $_has(4);
   @$pb.TagNumber(5)
-  void clearGender() => clearField(5);
+  void clearPassword() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.String get country => $_getSZ(5);
+  Gender get gender => $_getN(5);
   @$pb.TagNumber(6)
-  set country($core.String v) { $_setString(5, v); }
+  set gender(Gender v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasCountry() => $_has(5);
+  $core.bool hasGender() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCountry() => clearField(6);
+  void clearGender() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get blocked => $_getBF(6);
+  $core.String get country => $_getSZ(6);
   @$pb.TagNumber(7)
-  set blocked($core.bool v) { $_setBool(6, v); }
+  set country($core.String v) { $_setString(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasBlocked() => $_has(6);
+  $core.bool hasCountry() => $_has(6);
   @$pb.TagNumber(7)
-  void clearBlocked() => clearField(7);
+  void clearCountry() => clearField(7);
 
   @$pb.TagNumber(8)
-  $1.Timestamp get birthdate => $_getN(7);
+  $core.bool get blocked => $_getBF(7);
   @$pb.TagNumber(8)
-  set birthdate($1.Timestamp v) { setField(8, v); }
+  set blocked($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasBirthdate() => $_has(7);
+  $core.bool hasBlocked() => $_has(7);
   @$pb.TagNumber(8)
-  void clearBirthdate() => clearField(8);
-  @$pb.TagNumber(8)
-  $1.Timestamp ensureBirthdate() => $_ensure(7);
+  void clearBlocked() => clearField(8);
 
   @$pb.TagNumber(9)
-  $1.Timestamp get createdAt => $_getN(8);
+  $1.Timestamp get birthdate => $_getN(8);
   @$pb.TagNumber(9)
-  set createdAt($1.Timestamp v) { setField(9, v); }
+  set birthdate($1.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasCreatedAt() => $_has(8);
+  $core.bool hasBirthdate() => $_has(8);
   @$pb.TagNumber(9)
-  void clearCreatedAt() => clearField(9);
+  void clearBirthdate() => clearField(9);
   @$pb.TagNumber(9)
-  $1.Timestamp ensureCreatedAt() => $_ensure(8);
+  $1.Timestamp ensureBirthdate() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $1.Timestamp get updatedAt => $_getN(9);
+  $1.Timestamp get createdAt => $_getN(9);
   @$pb.TagNumber(10)
-  set updatedAt($1.Timestamp v) { setField(10, v); }
+  set createdAt($1.Timestamp v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasUpdatedAt() => $_has(9);
+  $core.bool hasCreatedAt() => $_has(9);
   @$pb.TagNumber(10)
-  void clearUpdatedAt() => clearField(10);
+  void clearCreatedAt() => clearField(10);
   @$pb.TagNumber(10)
-  $1.Timestamp ensureUpdatedAt() => $_ensure(9);
+  $1.Timestamp ensureCreatedAt() => $_ensure(9);
+
+  @$pb.TagNumber(11)
+  $1.Timestamp get updatedAt => $_getN(10);
+  @$pb.TagNumber(11)
+  set updatedAt($1.Timestamp v) { setField(11, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasUpdatedAt() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearUpdatedAt() => clearField(11);
+  @$pb.TagNumber(11)
+  $1.Timestamp ensureUpdatedAt() => $_ensure(10);
 }
 
 class UserRequest extends $pb.GeneratedMessage {
