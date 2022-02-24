@@ -7,7 +7,7 @@ option go_package = "./go_softcorp";
 import "google/protobuf/timestamp.proto";
 
 service UserService {
-    rpc HeartBeat(Request) returns (Response) {}
+    rpc Liveness(Request) returns (Response) {}
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
@@ -15,6 +15,13 @@ service UserService {
     rpc UpdateProfile(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
+}
+
+enum Gender {
+    INVALID_GENDER = 0;
+    MALE = 1;
+    FEMALE = 2;
+    OTHER = 3;
 }
 
 message User {
@@ -32,8 +39,7 @@ message User {
 
 message UserRequest {
     User user = 1;
-    string accessToken = 2;
-    UserFilter filter = 3;
+    UserFilter filter = 2;
 }
 
 message UserFilter {
