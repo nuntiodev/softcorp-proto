@@ -18,7 +18,7 @@ export 'softcorp.pbenum.dart';
 class User extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'User', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Softcorp'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId', protoName: 'organizationId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
@@ -35,7 +35,7 @@ class User extends $pb.GeneratedMessage {
   User._() : super();
   factory User({
     $core.String? id,
-    $core.String? organizationId,
+    $core.String? namespace,
     $core.String? name,
     $core.String? email,
     $core.String? password,
@@ -51,8 +51,8 @@ class User extends $pb.GeneratedMessage {
     if (id != null) {
       _result.id = id;
     }
-    if (organizationId != null) {
-      _result.organizationId = organizationId;
+    if (namespace != null) {
+      _result.namespace = namespace;
     }
     if (name != null) {
       _result.name = name;
@@ -117,13 +117,13 @@ class User extends $pb.GeneratedMessage {
   void clearId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get organizationId => $_getSZ(1);
+  $core.String get namespace => $_getSZ(1);
   @$pb.TagNumber(2)
-  set organizationId($core.String v) { $_setString(1, v); }
+  set namespace($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasOrganizationId() => $_has(1);
+  $core.bool hasNamespace() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOrganizationId() => clearField(2);
+  void clearNamespace() => clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
@@ -308,7 +308,7 @@ class UserFilter extends $pb.GeneratedMessage {
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.O3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to', $pb.PbFieldType.O3)
     ..e<UserFilter_SortBy>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', $pb.PbFieldType.OE, defaultOrMaker: UserFilter_SortBy.CREATED_AT, valueOf: UserFilter_SortBy.valueOf, enumValues: UserFilter_SortBy.values)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'organizationId', protoName: 'organizationId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
     ..hasRequiredFields = false
   ;
 
@@ -317,7 +317,7 @@ class UserFilter extends $pb.GeneratedMessage {
     $core.int? from,
     $core.int? to,
     UserFilter_SortBy? sort,
-    $core.String? organizationId,
+    $core.String? namespace,
   }) {
     final _result = create();
     if (from != null) {
@@ -329,8 +329,8 @@ class UserFilter extends $pb.GeneratedMessage {
     if (sort != null) {
       _result.sort = sort;
     }
-    if (organizationId != null) {
-      _result.organizationId = organizationId;
+    if (namespace != null) {
+      _result.namespace = namespace;
     }
     return _result;
   }
@@ -383,13 +383,13 @@ class UserFilter extends $pb.GeneratedMessage {
   void clearSort() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get organizationId => $_getSZ(3);
+  $core.String get namespace => $_getSZ(3);
   @$pb.TagNumber(4)
-  set organizationId($core.String v) { $_setString(3, v); }
+  set namespace($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasOrganizationId() => $_has(3);
+  $core.bool hasNamespace() => $_has(3);
   @$pb.TagNumber(4)
-  void clearOrganizationId() => clearField(4);
+  void clearNamespace() => clearField(4);
 }
 
 class UserResponse extends $pb.GeneratedMessage {

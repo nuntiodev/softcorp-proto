@@ -190,7 +190,7 @@ proto.Softcorp.User.prototype.toObject = function(opt_includeInstance) {
 proto.Softcorp.User.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    organizationid: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     email: jspb.Message.getFieldWithDefault(msg, 4, ""),
     password: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -243,7 +243,7 @@ proto.Softcorp.User.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrganizationid(value);
+      msg.setNamespace(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -324,7 +324,7 @@ proto.Softcorp.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOrganizationid();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -426,10 +426,10 @@ proto.Softcorp.User.prototype.setId = function(value) {
 
 
 /**
- * optional string organizationId = 2;
+ * optional string namespace = 2;
  * @return {string}
  */
-proto.Softcorp.User.prototype.getOrganizationid = function() {
+proto.Softcorp.User.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -438,7 +438,7 @@ proto.Softcorp.User.prototype.getOrganizationid = function() {
  * @param {string} value
  * @return {!proto.Softcorp.User} returns this
  */
-proto.Softcorp.User.prototype.setOrganizationid = function(value) {
+proto.Softcorp.User.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -968,7 +968,7 @@ proto.Softcorp.UserFilter.toObject = function(includeInstance, msg) {
     from: jspb.Message.getFieldWithDefault(msg, 1, 0),
     to: jspb.Message.getFieldWithDefault(msg, 2, 0),
     sort: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    organizationid: jspb.Message.getFieldWithDefault(msg, 4, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1019,7 +1019,7 @@ proto.Softcorp.UserFilter.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOrganizationid(value);
+      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -1071,7 +1071,7 @@ proto.Softcorp.UserFilter.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOrganizationid();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -1147,10 +1147,10 @@ proto.Softcorp.UserFilter.prototype.setSort = function(value) {
 
 
 /**
- * optional string organizationId = 4;
+ * optional string namespace = 4;
  * @return {string}
  */
-proto.Softcorp.UserFilter.prototype.getOrganizationid = function() {
+proto.Softcorp.UserFilter.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -1159,7 +1159,7 @@ proto.Softcorp.UserFilter.prototype.getOrganizationid = function() {
  * @param {string} value
  * @return {!proto.Softcorp.UserFilter} returns this
  */
-proto.Softcorp.UserFilter.prototype.setOrganizationid = function(value) {
+proto.Softcorp.UserFilter.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
