@@ -74,11 +74,12 @@ const UserFilter_SortBy$json = const {
     const {'1': 'UPDATE_AT', '2': 1},
     const {'1': 'BIRTHDATE', '2': 2},
     const {'1': 'NAME', '2': 3},
+    const {'1': 'EMAIL', '2': 4},
   ],
 };
 
 /// Descriptor for `UserFilter`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userFilterDescriptor = $convert.base64Decode('CgpVc2VyRmlsdGVyEhIKBGZyb20YASABKAVSBGZyb20SDgoCdG8YAiABKAVSAnRvEioKB2dlbmRlcnMYAyADKA4yEC5Tb2Z0Y29ycC5HZW5kZXJSB2dlbmRlcnMSLwoEc29ydBgEIAEoDjIbLlNvZnRjb3JwLlVzZXJGaWx0ZXIuU29ydEJ5UgRzb3J0IkAKBlNvcnRCeRIOCgpDUkVBVEVEX0FUEAASDQoJVVBEQVRFX0FUEAESDQoJQklSVEhEQVRFEAISCAoETkFNRRAD');
+final $typed_data.Uint8List userFilterDescriptor = $convert.base64Decode('CgpVc2VyRmlsdGVyEhIKBGZyb20YASABKAVSBGZyb20SDgoCdG8YAiABKAVSAnRvEioKB2dlbmRlcnMYAyADKA4yEC5Tb2Z0Y29ycC5HZW5kZXJSB2dlbmRlcnMSLwoEc29ydBgEIAEoDjIbLlNvZnRjb3JwLlVzZXJGaWx0ZXIuU29ydEJ5UgRzb3J0IksKBlNvcnRCeRIOCgpDUkVBVEVEX0FUEAASDQoJVVBEQVRFX0FUEAESDQoJQklSVEhEQVRFEAISCAoETkFNRRADEgkKBUVNQUlMEAQ=');
 @$core.Deprecated('Use userResponseDescriptor instead')
 const UserResponse$json = const {
   '1': 'UserResponse',

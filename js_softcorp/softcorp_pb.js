@@ -1097,7 +1097,8 @@ proto.Softcorp.UserFilter.SortBy = {
   CREATED_AT: 0,
   UPDATE_AT: 1,
   BIRTHDATE: 2,
-  NAME: 3
+  NAME: 3,
+  EMAIL: 4
 };
 
 /**
