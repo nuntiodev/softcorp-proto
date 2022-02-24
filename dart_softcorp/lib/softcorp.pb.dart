@@ -308,6 +308,7 @@ class UserFilter extends $pb.GeneratedMessage {
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.O3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to', $pb.PbFieldType.O3)
     ..pc<Gender>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'genders', $pb.PbFieldType.PE, valueOf: Gender.valueOf, enumValues: Gender.values)
+    ..e<UserFilter_SortBy>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', $pb.PbFieldType.OE, defaultOrMaker: UserFilter_SortBy.CREATED_AT, valueOf: UserFilter_SortBy.valueOf, enumValues: UserFilter_SortBy.values)
     ..hasRequiredFields = false
   ;
 
@@ -316,6 +317,7 @@ class UserFilter extends $pb.GeneratedMessage {
     $core.int? from,
     $core.int? to,
     $core.Iterable<Gender>? genders,
+    UserFilter_SortBy? sort,
   }) {
     final _result = create();
     if (from != null) {
@@ -326,6 +328,9 @@ class UserFilter extends $pb.GeneratedMessage {
     }
     if (genders != null) {
       _result.genders.addAll(genders);
+    }
+    if (sort != null) {
+      _result.sort = sort;
     }
     return _result;
   }
@@ -370,6 +375,15 @@ class UserFilter extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<Gender> get genders => $_getList(2);
+
+  @$pb.TagNumber(4)
+  UserFilter_SortBy get sort => $_getN(3);
+  @$pb.TagNumber(4)
+  set sort(UserFilter_SortBy v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSort() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSort() => clearField(4);
 }
 
 class UserResponse extends $pb.GeneratedMessage {

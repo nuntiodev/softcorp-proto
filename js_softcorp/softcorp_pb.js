@@ -28,6 +28,7 @@ goog.exportSymbol('proto.Softcorp.Request', null, global);
 goog.exportSymbol('proto.Softcorp.Response', null, global);
 goog.exportSymbol('proto.Softcorp.User', null, global);
 goog.exportSymbol('proto.Softcorp.UserFilter', null, global);
+goog.exportSymbol('proto.Softcorp.UserFilter.SortBy', null, global);
 goog.exportSymbol('proto.Softcorp.UserRequest', null, global);
 goog.exportSymbol('proto.Softcorp.UserResponse', null, global);
 /**
@@ -973,7 +974,8 @@ proto.Softcorp.UserFilter.toObject = function(includeInstance, msg) {
   var f, obj = {
     from: jspb.Message.getFieldWithDefault(msg, 1, 0),
     to: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    gendersList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
+    gendersList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    sort: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1023,6 +1025,10 @@ proto.Softcorp.UserFilter.deserializeBinaryFromReader = function(msg, reader) {
       for (var i = 0; i < values.length; i++) {
         msg.addGenders(values[i]);
       }
+      break;
+    case 4:
+      var value = /** @type {!proto.Softcorp.UserFilter.SortBy} */ (reader.readEnum());
+      msg.setSort(value);
       break;
     default:
       reader.skipField();
@@ -1074,8 +1080,25 @@ proto.Softcorp.UserFilter.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getSort();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
 };
 
+
+/**
+ * @enum {number}
+ */
+proto.Softcorp.UserFilter.SortBy = {
+  CREATED_AT: 0,
+  UPDATE_AT: 1,
+  BIRTHDATE: 2,
+  NAME: 3
+};
 
 /**
  * optional int32 from = 1;
@@ -1147,6 +1170,24 @@ proto.Softcorp.UserFilter.prototype.addGenders = function(value, opt_index) {
  */
 proto.Softcorp.UserFilter.prototype.clearGendersList = function() {
   return this.setGendersList([]);
+};
+
+
+/**
+ * optional SortBy sort = 4;
+ * @return {!proto.Softcorp.UserFilter.SortBy}
+ */
+proto.Softcorp.UserFilter.prototype.getSort = function() {
+  return /** @type {!proto.Softcorp.UserFilter.SortBy} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.Softcorp.UserFilter.SortBy} value
+ * @return {!proto.Softcorp.UserFilter} returns this
+ */
+proto.Softcorp.UserFilter.prototype.setSort = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
 };
 
 

@@ -28,3 +28,22 @@ class Gender extends $pb.ProtobufEnum {
   const Gender._($core.int v, $core.String n) : super(v, n);
 }
 
+class UserFilter_SortBy extends $pb.ProtobufEnum {
+  static const UserFilter_SortBy CREATED_AT = UserFilter_SortBy._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'CREATED_AT');
+  static const UserFilter_SortBy UPDATE_AT = UserFilter_SortBy._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'UPDATE_AT');
+  static const UserFilter_SortBy BIRTHDATE = UserFilter_SortBy._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BIRTHDATE');
+  static const UserFilter_SortBy NAME = UserFilter_SortBy._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NAME');
+
+  static const $core.List<UserFilter_SortBy> values = <UserFilter_SortBy> [
+    CREATED_AT,
+    UPDATE_AT,
+    BIRTHDATE,
+    NAME,
+  ];
+
+  static final $core.Map<$core.int, UserFilter_SortBy> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static UserFilter_SortBy? valueOf($core.int value) => _byValue[value];
+
+  const UserFilter_SortBy._($core.int v, $core.String n) : super(v, n);
+}
+
