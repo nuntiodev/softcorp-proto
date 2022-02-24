@@ -12,6 +12,7 @@ service UserService {
     rpc Get(UserRequest) returns (UserResponse) {}
     rpc GetAll(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
+    rpc UpdateEmail(UserRequest) returns (UserResponse) {}
     rpc UpdateProfile(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
@@ -40,7 +41,8 @@ message User {
 
 message UserRequest {
     User user = 1;
-    UserFilter filter = 2;
+    User update = 2;
+    UserFilter filter = 3;
 }
 
 message UserFilter {
