@@ -57,6 +57,7 @@ message UserFilter {
     int32 from = 1;
     int32 to = 2;
     SortBy sort = 3;
+    string organizationId = 4;
 }
 
 message UserResponse {
