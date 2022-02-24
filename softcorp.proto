@@ -27,7 +27,7 @@ enum Gender {
 
 message User {
     string id = 1;
-    string organizationId = 2;
+    string namespace = 2;
     string name = 3;
     string email = 4;
     string password = 5;
@@ -57,7 +57,7 @@ message UserFilter {
     int32 from = 1;
     int32 to = 2;
     SortBy sort = 3;
-    string organizationId = 4;
+    string namespace = 4;
 }
 
 message UserResponse {
