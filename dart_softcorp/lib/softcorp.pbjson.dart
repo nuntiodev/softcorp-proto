@@ -49,11 +49,12 @@ const UserRequest$json = const {
     const {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.Softcorp.User', '10': 'user'},
     const {'1': 'update', '3': 2, '4': 1, '5': 11, '6': '.Softcorp.User', '10': 'update'},
     const {'1': 'filter', '3': 3, '4': 1, '5': 11, '6': '.Softcorp.UserFilter', '10': 'filter'},
+    const {'1': 'namespace', '3': 4, '4': 1, '5': 9, '10': 'namespace'},
   ],
 };
 
 /// Descriptor for `UserRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIiCgR1c2VyGAEgASgLMg4uU29mdGNvcnAuVXNlclIEdXNlchImCgZ1cGRhdGUYAiABKAsyDi5Tb2Z0Y29ycC5Vc2VyUgZ1cGRhdGUSLAoGZmlsdGVyGAMgASgLMhQuU29mdGNvcnAuVXNlckZpbHRlclIGZmlsdGVy');
+final $typed_data.Uint8List userRequestDescriptor = $convert.base64Decode('CgtVc2VyUmVxdWVzdBIiCgR1c2VyGAEgASgLMg4uU29mdGNvcnAuVXNlclIEdXNlchImCgZ1cGRhdGUYAiABKAsyDi5Tb2Z0Y29ycC5Vc2VyUgZ1cGRhdGUSLAoGZmlsdGVyGAMgASgLMhQuU29mdGNvcnAuVXNlckZpbHRlclIGZmlsdGVyEhwKCW5hbWVzcGFjZRgEIAEoCVIJbmFtZXNwYWNl');
 @$core.Deprecated('Use userFilterDescriptor instead')
 const UserFilter$json = const {
   '1': 'UserFilter',

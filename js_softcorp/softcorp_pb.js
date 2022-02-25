@@ -715,7 +715,8 @@ proto.Softcorp.UserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     user: (f = msg.getUser()) && proto.Softcorp.User.toObject(includeInstance, f),
     update: (f = msg.getUpdate()) && proto.Softcorp.User.toObject(includeInstance, f),
-    filter: (f = msg.getFilter()) && proto.Softcorp.UserFilter.toObject(includeInstance, f)
+    filter: (f = msg.getFilter()) && proto.Softcorp.UserFilter.toObject(includeInstance, f),
+    namespace: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -766,6 +767,10 @@ proto.Softcorp.UserRequest.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.Softcorp.UserFilter;
       reader.readMessage(value,proto.Softcorp.UserFilter.deserializeBinaryFromReader);
       msg.setFilter(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -818,6 +823,13 @@ proto.Softcorp.UserRequest.serializeBinaryToWriter = function(message, writer) {
       3,
       f,
       proto.Softcorp.UserFilter.serializeBinaryToWriter
+    );
+  }
+  f = message.getNamespace();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -931,6 +943,24 @@ proto.Softcorp.UserRequest.prototype.clearFilter = function() {
  */
 proto.Softcorp.UserRequest.prototype.hasFilter = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string namespace = 4;
+ * @return {string}
+ */
+proto.Softcorp.UserRequest.prototype.getNamespace = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Softcorp.UserRequest} returns this
+ */
+proto.Softcorp.UserRequest.prototype.setNamespace = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

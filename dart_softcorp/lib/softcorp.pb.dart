@@ -227,6 +227,7 @@ class UserRequest extends $pb.GeneratedMessage {
     ..aOM<User>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user', subBuilder: User.create)
     ..aOM<User>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'update', subBuilder: User.create)
     ..aOM<UserFilter>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'filter', subBuilder: UserFilter.create)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
     ..hasRequiredFields = false
   ;
 
@@ -235,6 +236,7 @@ class UserRequest extends $pb.GeneratedMessage {
     User? user,
     User? update,
     UserFilter? filter,
+    $core.String? namespace,
   }) {
     final _result = create();
     if (user != null) {
@@ -245,6 +247,9 @@ class UserRequest extends $pb.GeneratedMessage {
     }
     if (filter != null) {
       _result.filter = filter;
+    }
+    if (namespace != null) {
+      _result.namespace = namespace;
     }
     return _result;
   }
@@ -301,6 +306,15 @@ class UserRequest extends $pb.GeneratedMessage {
   void clearFilter() => clearField(3);
   @$pb.TagNumber(3)
   UserFilter ensureFilter() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $core.String get namespace => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set namespace($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasNamespace() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearNamespace() => clearField(4);
 }
 
 class UserFilter extends $pb.GeneratedMessage {
