@@ -200,128 +200,6 @@ proto.Softcorp.UserServicePromiseClient.prototype.create =
  *   !proto.Softcorp.UserRequest,
  *   !proto.Softcorp.UserResponse>}
  */
-const methodDescriptor_UserService_Get = new grpc.web.MethodDescriptor(
-  '/Softcorp.UserService/Get',
-  grpc.web.MethodType.UNARY,
-  proto.Softcorp.UserRequest,
-  proto.Softcorp.UserResponse,
-  /**
-   * @param {!proto.Softcorp.UserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.Softcorp.UserResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.Softcorp.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Softcorp.UserResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Softcorp.UserResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.Softcorp.UserServiceClient.prototype.get =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/Softcorp.UserService/Get',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_Get,
-      callback);
-};
-
-
-/**
- * @param {!proto.Softcorp.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.Softcorp.UserResponse>}
- *     Promise that resolves to the response
- */
-proto.Softcorp.UserServicePromiseClient.prototype.get =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/Softcorp.UserService/Get',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_Get);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.Softcorp.UserRequest,
- *   !proto.Softcorp.UserResponse>}
- */
-const methodDescriptor_UserService_GetAll = new grpc.web.MethodDescriptor(
-  '/Softcorp.UserService/GetAll',
-  grpc.web.MethodType.UNARY,
-  proto.Softcorp.UserRequest,
-  proto.Softcorp.UserResponse,
-  /**
-   * @param {!proto.Softcorp.UserRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.Softcorp.UserResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.Softcorp.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.Softcorp.UserResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.Softcorp.UserResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.Softcorp.UserServiceClient.prototype.getAll =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/Softcorp.UserService/GetAll',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_GetAll,
-      callback);
-};
-
-
-/**
- * @param {!proto.Softcorp.UserRequest} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.Softcorp.UserResponse>}
- *     Promise that resolves to the response
- */
-proto.Softcorp.UserServicePromiseClient.prototype.getAll =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/Softcorp.UserService/GetAll',
-      request,
-      metadata || {},
-      methodDescriptor_UserService_GetAll);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.Softcorp.UserRequest,
- *   !proto.Softcorp.UserResponse>}
- */
 const methodDescriptor_UserService_UpdatePassword = new grpc.web.MethodDescriptor(
   '/Softcorp.UserService/UpdatePassword',
   grpc.web.MethodType.UNARY,
@@ -505,6 +383,189 @@ proto.Softcorp.UserServicePromiseClient.prototype.updateProfile =
  *   !proto.Softcorp.UserRequest,
  *   !proto.Softcorp.UserResponse>}
  */
+const methodDescriptor_UserService_UpdateNamespace = new grpc.web.MethodDescriptor(
+  '/Softcorp.UserService/UpdateNamespace',
+  grpc.web.MethodType.UNARY,
+  proto.Softcorp.UserRequest,
+  proto.Softcorp.UserResponse,
+  /**
+   * @param {!proto.Softcorp.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Softcorp.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Softcorp.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Softcorp.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Softcorp.UserServiceClient.prototype.updateNamespace =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Softcorp.UserService/UpdateNamespace',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateNamespace,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Softcorp.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Softcorp.UserServicePromiseClient.prototype.updateNamespace =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Softcorp.UserService/UpdateNamespace',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_UpdateNamespace);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Softcorp.UserRequest,
+ *   !proto.Softcorp.UserResponse>}
+ */
+const methodDescriptor_UserService_Get = new grpc.web.MethodDescriptor(
+  '/Softcorp.UserService/Get',
+  grpc.web.MethodType.UNARY,
+  proto.Softcorp.UserRequest,
+  proto.Softcorp.UserResponse,
+  /**
+   * @param {!proto.Softcorp.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Softcorp.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Softcorp.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Softcorp.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Softcorp.UserServiceClient.prototype.get =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Softcorp.UserService/Get',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_Get,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Softcorp.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Softcorp.UserServicePromiseClient.prototype.get =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Softcorp.UserService/Get',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_Get);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Softcorp.UserRequest,
+ *   !proto.Softcorp.UserResponse>}
+ */
+const methodDescriptor_UserService_GetAll = new grpc.web.MethodDescriptor(
+  '/Softcorp.UserService/GetAll',
+  grpc.web.MethodType.UNARY,
+  proto.Softcorp.UserRequest,
+  proto.Softcorp.UserResponse,
+  /**
+   * @param {!proto.Softcorp.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Softcorp.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Softcorp.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Softcorp.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Softcorp.UserServiceClient.prototype.getAll =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Softcorp.UserService/GetAll',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetAll,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Softcorp.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Softcorp.UserServicePromiseClient.prototype.getAll =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Softcorp.UserService/GetAll',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_GetAll);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Softcorp.UserRequest,
+ *   !proto.Softcorp.UserResponse>}
+ */
 const methodDescriptor_UserService_ValidateCredentials = new grpc.web.MethodDescriptor(
   '/Softcorp.UserService/ValidateCredentials',
   grpc.web.MethodType.UNARY,
@@ -618,6 +679,67 @@ proto.Softcorp.UserServicePromiseClient.prototype.delete =
       request,
       metadata || {},
       methodDescriptor_UserService_Delete);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.Softcorp.UserRequest,
+ *   !proto.Softcorp.UserResponse>}
+ */
+const methodDescriptor_UserService_DeleteNamespace = new grpc.web.MethodDescriptor(
+  '/Softcorp.UserService/DeleteNamespace',
+  grpc.web.MethodType.UNARY,
+  proto.Softcorp.UserRequest,
+  proto.Softcorp.UserResponse,
+  /**
+   * @param {!proto.Softcorp.UserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.Softcorp.UserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.Softcorp.UserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.Softcorp.UserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.Softcorp.UserServiceClient.prototype.deleteNamespace =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/Softcorp.UserService/DeleteNamespace',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_DeleteNamespace,
+      callback);
+};
+
+
+/**
+ * @param {!proto.Softcorp.UserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.Softcorp.UserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.Softcorp.UserServicePromiseClient.prototype.deleteNamespace =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/Softcorp.UserService/DeleteNamespace',
+      request,
+      metadata || {},
+      methodDescriptor_UserService_DeleteNamespace);
 };
 
 

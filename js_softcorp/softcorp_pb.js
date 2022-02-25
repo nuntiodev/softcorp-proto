@@ -970,7 +970,8 @@ proto.Softcorp.UserFilter.toObject = function(includeInstance, msg) {
     to: jspb.Message.getFieldWithDefault(msg, 2, 0),
     sort: jspb.Message.getFieldWithDefault(msg, 3, 0),
     order: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    namespace: jspb.Message.getFieldWithDefault(msg, 5, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    search: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1026,6 +1027,10 @@ proto.Softcorp.UserFilter.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSearch(value);
       break;
     default:
       reader.skipField();
@@ -1088,6 +1093,13 @@ proto.Softcorp.UserFilter.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getSearch();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -1200,6 +1212,24 @@ proto.Softcorp.UserFilter.prototype.getNamespace = function() {
  */
 proto.Softcorp.UserFilter.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string search = 6;
+ * @return {string}
+ */
+proto.Softcorp.UserFilter.prototype.getSearch = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Softcorp.UserFilter} returns this
+ */
+proto.Softcorp.UserFilter.prototype.setSearch = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 

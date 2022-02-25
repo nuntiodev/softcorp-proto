@@ -310,6 +310,7 @@ class UserFilter extends $pb.GeneratedMessage {
     ..e<UserFilter_SortBy>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', $pb.PbFieldType.OE, defaultOrMaker: UserFilter_SortBy.CREATED_AT, valueOf: UserFilter_SortBy.valueOf, enumValues: UserFilter_SortBy.values)
     ..e<UserFilter_Order>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'order', $pb.PbFieldType.OE, defaultOrMaker: UserFilter_Order.INC, valueOf: UserFilter_Order.valueOf, enumValues: UserFilter_Order.values)
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'search')
     ..hasRequiredFields = false
   ;
 
@@ -320,6 +321,7 @@ class UserFilter extends $pb.GeneratedMessage {
     UserFilter_SortBy? sort,
     UserFilter_Order? order,
     $core.String? namespace,
+    $core.String? search,
   }) {
     final _result = create();
     if (from != null) {
@@ -336,6 +338,9 @@ class UserFilter extends $pb.GeneratedMessage {
     }
     if (namespace != null) {
       _result.namespace = namespace;
+    }
+    if (search != null) {
+      _result.search = search;
     }
     return _result;
   }
@@ -404,6 +409,15 @@ class UserFilter extends $pb.GeneratedMessage {
   $core.bool hasNamespace() => $_has(4);
   @$pb.TagNumber(5)
   void clearNamespace() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get search => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set search($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasSearch() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSearch() => clearField(6);
 }
 
 class UserResponse extends $pb.GeneratedMessage {

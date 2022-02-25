@@ -63,6 +63,7 @@ const UserFilter$json = const {
     const {'1': 'sort', '3': 3, '4': 1, '5': 14, '6': '.Softcorp.UserFilter.SortBy', '10': 'sort'},
     const {'1': 'order', '3': 4, '4': 1, '5': 14, '6': '.Softcorp.UserFilter.Order', '10': 'order'},
     const {'1': 'namespace', '3': 5, '4': 1, '5': 9, '10': 'namespace'},
+    const {'1': 'search', '3': 6, '4': 1, '5': 9, '10': 'search'},
   ],
   '4': const [UserFilter_SortBy$json, UserFilter_Order$json],
 };
@@ -89,7 +90,7 @@ const UserFilter_Order$json = const {
 };
 
 /// Descriptor for `UserFilter`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userFilterDescriptor = $convert.base64Decode('CgpVc2VyRmlsdGVyEhIKBGZyb20YASABKAVSBGZyb20SDgoCdG8YAiABKAVSAnRvEi8KBHNvcnQYAyABKA4yGy5Tb2Z0Y29ycC5Vc2VyRmlsdGVyLlNvcnRCeVIEc29ydBIwCgVvcmRlchgEIAEoDjIaLlNvZnRjb3JwLlVzZXJGaWx0ZXIuT3JkZXJSBW9yZGVyEhwKCW5hbWVzcGFjZRgFIAEoCVIJbmFtZXNwYWNlIksKBlNvcnRCeRIOCgpDUkVBVEVEX0FUEAASDQoJVVBEQVRFX0FUEAESDQoJQklSVEhEQVRFEAISCAoETkFNRRADEgkKBUVNQUlMEAQiGQoFT3JkZXISBwoDSU5DEAASBwoDREVDEAE=');
+final $typed_data.Uint8List userFilterDescriptor = $convert.base64Decode('CgpVc2VyRmlsdGVyEhIKBGZyb20YASABKAVSBGZyb20SDgoCdG8YAiABKAVSAnRvEi8KBHNvcnQYAyABKA4yGy5Tb2Z0Y29ycC5Vc2VyRmlsdGVyLlNvcnRCeVIEc29ydBIwCgVvcmRlchgEIAEoDjIaLlNvZnRjb3JwLlVzZXJGaWx0ZXIuT3JkZXJSBW9yZGVyEhwKCW5hbWVzcGFjZRgFIAEoCVIJbmFtZXNwYWNlEhYKBnNlYXJjaBgGIAEoCVIGc2VhcmNoIksKBlNvcnRCeRIOCgpDUkVBVEVEX0FUEAASDQoJVVBEQVRFX0FUEAESDQoJQklSVEhEQVRFEAISCAoETkFNRRADEgkKBUVNQUlMEAQiGQoFT3JkZXISBwoDSU5DEAASBwoDREVDEAE=');
 @$core.Deprecated('Use userResponseDescriptor instead')
 const UserResponse$json = const {
   '1': 'UserResponse',
