@@ -61,9 +61,10 @@ const UserFilter$json = const {
     const {'1': 'from', '3': 1, '4': 1, '5': 5, '10': 'from'},
     const {'1': 'to', '3': 2, '4': 1, '5': 5, '10': 'to'},
     const {'1': 'sort', '3': 3, '4': 1, '5': 14, '6': '.Softcorp.UserFilter.SortBy', '10': 'sort'},
-    const {'1': 'namespace', '3': 4, '4': 1, '5': 9, '10': 'namespace'},
+    const {'1': 'order', '3': 4, '4': 1, '5': 14, '6': '.Softcorp.UserFilter.Order', '10': 'order'},
+    const {'1': 'namespace', '3': 5, '4': 1, '5': 9, '10': 'namespace'},
   ],
-  '4': const [UserFilter_SortBy$json],
+  '4': const [UserFilter_SortBy$json, UserFilter_Order$json],
 };
 
 @$core.Deprecated('Use userFilterDescriptor instead')
@@ -78,8 +79,17 @@ const UserFilter_SortBy$json = const {
   ],
 };
 
+@$core.Deprecated('Use userFilterDescriptor instead')
+const UserFilter_Order$json = const {
+  '1': 'Order',
+  '2': const [
+    const {'1': 'INC', '2': 0},
+    const {'1': 'DEC', '2': 1},
+  ],
+};
+
 /// Descriptor for `UserFilter`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userFilterDescriptor = $convert.base64Decode('CgpVc2VyRmlsdGVyEhIKBGZyb20YASABKAVSBGZyb20SDgoCdG8YAiABKAVSAnRvEi8KBHNvcnQYAyABKA4yGy5Tb2Z0Y29ycC5Vc2VyRmlsdGVyLlNvcnRCeVIEc29ydBIcCgluYW1lc3BhY2UYBCABKAlSCW5hbWVzcGFjZSJLCgZTb3J0QnkSDgoKQ1JFQVRFRF9BVBAAEg0KCVVQREFURV9BVBABEg0KCUJJUlRIREFURRACEggKBE5BTUUQAxIJCgVFTUFJTBAE');
+final $typed_data.Uint8List userFilterDescriptor = $convert.base64Decode('CgpVc2VyRmlsdGVyEhIKBGZyb20YASABKAVSBGZyb20SDgoCdG8YAiABKAVSAnRvEi8KBHNvcnQYAyABKA4yGy5Tb2Z0Y29ycC5Vc2VyRmlsdGVyLlNvcnRCeVIEc29ydBIwCgVvcmRlchgEIAEoDjIaLlNvZnRjb3JwLlVzZXJGaWx0ZXIuT3JkZXJSBW9yZGVyEhwKCW5hbWVzcGFjZRgFIAEoCVIJbmFtZXNwYWNlIksKBlNvcnRCeRIOCgpDUkVBVEVEX0FUEAASDQoJVVBEQVRFX0FUEAESDQoJQklSVEhEQVRFEAISCAoETkFNRRADEgkKBUVNQUlMEAQiGQoFT3JkZXISBwoDSU5DEAASBwoDREVDEAE=');
 @$core.Deprecated('Use userResponseDescriptor instead')
 const UserResponse$json = const {
   '1': 'UserResponse',

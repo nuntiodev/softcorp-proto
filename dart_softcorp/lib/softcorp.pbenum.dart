@@ -49,3 +49,18 @@ class UserFilter_SortBy extends $pb.ProtobufEnum {
   const UserFilter_SortBy._($core.int v, $core.String n) : super(v, n);
 }
 
+class UserFilter_Order extends $pb.ProtobufEnum {
+  static const UserFilter_Order INC = UserFilter_Order._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INC');
+  static const UserFilter_Order DEC = UserFilter_Order._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DEC');
+
+  static const $core.List<UserFilter_Order> values = <UserFilter_Order> [
+    INC,
+    DEC,
+  ];
+
+  static final $core.Map<$core.int, UserFilter_Order> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static UserFilter_Order? valueOf($core.int value) => _byValue[value];
+
+  const UserFilter_Order._($core.int v, $core.String n) : super(v, n);
+}
+

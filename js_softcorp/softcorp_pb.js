@@ -28,6 +28,7 @@ goog.exportSymbol('proto.Softcorp.Request', null, global);
 goog.exportSymbol('proto.Softcorp.Response', null, global);
 goog.exportSymbol('proto.Softcorp.User', null, global);
 goog.exportSymbol('proto.Softcorp.UserFilter', null, global);
+goog.exportSymbol('proto.Softcorp.UserFilter.Order', null, global);
 goog.exportSymbol('proto.Softcorp.UserFilter.SortBy', null, global);
 goog.exportSymbol('proto.Softcorp.UserRequest', null, global);
 goog.exportSymbol('proto.Softcorp.UserResponse', null, global);
@@ -968,7 +969,8 @@ proto.Softcorp.UserFilter.toObject = function(includeInstance, msg) {
     from: jspb.Message.getFieldWithDefault(msg, 1, 0),
     to: jspb.Message.getFieldWithDefault(msg, 2, 0),
     sort: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    namespace: jspb.Message.getFieldWithDefault(msg, 4, "")
+    order: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    namespace: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1018,6 +1020,10 @@ proto.Softcorp.UserFilter.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSort(value);
       break;
     case 4:
+      var value = /** @type {!proto.Softcorp.UserFilter.Order} */ (reader.readEnum());
+      msg.setOrder(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
@@ -1071,10 +1077,17 @@ proto.Softcorp.UserFilter.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getOrder();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
   f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
@@ -1090,6 +1103,14 @@ proto.Softcorp.UserFilter.SortBy = {
   BIRTHDATE: 2,
   NAME: 3,
   EMAIL: 4
+};
+
+/**
+ * @enum {number}
+ */
+proto.Softcorp.UserFilter.Order = {
+  INC: 0,
+  DEC: 1
 };
 
 /**
@@ -1147,11 +1168,29 @@ proto.Softcorp.UserFilter.prototype.setSort = function(value) {
 
 
 /**
- * optional string namespace = 4;
+ * optional Order order = 4;
+ * @return {!proto.Softcorp.UserFilter.Order}
+ */
+proto.Softcorp.UserFilter.prototype.getOrder = function() {
+  return /** @type {!proto.Softcorp.UserFilter.Order} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {!proto.Softcorp.UserFilter.Order} value
+ * @return {!proto.Softcorp.UserFilter} returns this
+ */
+proto.Softcorp.UserFilter.prototype.setOrder = function(value) {
+  return jspb.Message.setProto3EnumField(this, 4, value);
+};
+
+
+/**
+ * optional string namespace = 5;
  * @return {string}
  */
 proto.Softcorp.UserFilter.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -1160,7 +1199,7 @@ proto.Softcorp.UserFilter.prototype.getNamespace = function() {
  * @return {!proto.Softcorp.UserFilter} returns this
  */
 proto.Softcorp.UserFilter.prototype.setNamespace = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

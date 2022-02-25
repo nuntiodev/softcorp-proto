@@ -308,7 +308,8 @@ class UserFilter extends $pb.GeneratedMessage {
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.O3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to', $pb.PbFieldType.O3)
     ..e<UserFilter_SortBy>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', $pb.PbFieldType.OE, defaultOrMaker: UserFilter_SortBy.CREATED_AT, valueOf: UserFilter_SortBy.valueOf, enumValues: UserFilter_SortBy.values)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
+    ..e<UserFilter_Order>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'order', $pb.PbFieldType.OE, defaultOrMaker: UserFilter_Order.INC, valueOf: UserFilter_Order.valueOf, enumValues: UserFilter_Order.values)
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'namespace')
     ..hasRequiredFields = false
   ;
 
@@ -317,6 +318,7 @@ class UserFilter extends $pb.GeneratedMessage {
     $core.int? from,
     $core.int? to,
     UserFilter_SortBy? sort,
+    UserFilter_Order? order,
     $core.String? namespace,
   }) {
     final _result = create();
@@ -328,6 +330,9 @@ class UserFilter extends $pb.GeneratedMessage {
     }
     if (sort != null) {
       _result.sort = sort;
+    }
+    if (order != null) {
+      _result.order = order;
     }
     if (namespace != null) {
       _result.namespace = namespace;
@@ -383,13 +388,22 @@ class UserFilter extends $pb.GeneratedMessage {
   void clearSort() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get namespace => $_getSZ(3);
+  UserFilter_Order get order => $_getN(3);
   @$pb.TagNumber(4)
-  set namespace($core.String v) { $_setString(3, v); }
+  set order(UserFilter_Order v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasNamespace() => $_has(3);
+  $core.bool hasOrder() => $_has(3);
   @$pb.TagNumber(4)
-  void clearNamespace() => clearField(4);
+  void clearOrder() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get namespace => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set namespace($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasNamespace() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearNamespace() => clearField(5);
 }
 
 class UserResponse extends $pb.GeneratedMessage {
