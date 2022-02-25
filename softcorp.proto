@@ -9,13 +9,15 @@ import "google/protobuf/timestamp.proto";
 service UserService {
     rpc Liveness(Request) returns (Response) {}
     rpc Create(UserRequest) returns (UserResponse) {}
-    rpc Get(UserRequest) returns (UserResponse) {}
-    rpc GetAll(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
     rpc UpdateEmail(UserRequest) returns (UserResponse) {}
     rpc UpdateProfile(UserRequest) returns (UserResponse) {}
+    rpc UpdateNamespace(UserRequest) returns (UserResponse) {}
+    rpc Get(UserRequest) returns (UserResponse) {}
+    rpc GetAll(UserRequest) returns (UserResponse) {}
     rpc ValidateCredentials(UserRequest) returns (UserResponse) {}
     rpc Delete(UserRequest) returns (UserResponse) {}
+    rpc DeleteNamespace(UserRequest) returns (UserResponse) {}
 }
 
 enum Gender {
