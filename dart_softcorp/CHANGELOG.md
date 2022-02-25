@@ -194,3 +194,8 @@
 ## 0.0.95
 
 - New version.
+
+
+## 0.0.96
+
+- New version.
