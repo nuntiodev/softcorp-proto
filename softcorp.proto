@@ -65,6 +65,7 @@ message UserFilter {
     SortBy sort = 3;
     Order order = 4;
     string namespace = 5;
+    string search = 6;
 }
 
 message UserResponse {
