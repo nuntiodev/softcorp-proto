@@ -46,6 +46,7 @@ message UserRequest {
     User user = 1;
     User update = 2;
     UserFilter filter = 3;
+    string namespace = 4;
 }
 
 message UserFilter {
