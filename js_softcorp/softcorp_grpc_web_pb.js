@@ -78,8 +78,8 @@ proto.Softcorp.UserServicePromiseClient =
  *   !proto.Softcorp.Request,
  *   !proto.Softcorp.Response>}
  */
-const methodDescriptor_UserService_Liveness = new grpc.web.MethodDescriptor(
-  '/Softcorp.UserService/Liveness',
+const methodDescriptor_UserService_Heartbeat = new grpc.web.MethodDescriptor(
+  '/Softcorp.UserService/Heartbeat',
   grpc.web.MethodType.UNARY,
   proto.Softcorp.Request,
   proto.Softcorp.Response,
@@ -104,13 +104,13 @@ const methodDescriptor_UserService_Liveness = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.Softcorp.Response>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.Softcorp.UserServiceClient.prototype.liveness =
+proto.Softcorp.UserServiceClient.prototype.heartbeat =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/Softcorp.UserService/Liveness',
+      '/Softcorp.UserService/Heartbeat',
       request,
       metadata || {},
-      methodDescriptor_UserService_Liveness,
+      methodDescriptor_UserService_Heartbeat,
       callback);
 };
 
@@ -123,13 +123,13 @@ proto.Softcorp.UserServiceClient.prototype.liveness =
  * @return {!Promise<!proto.Softcorp.Response>}
  *     Promise that resolves to the response
  */
-proto.Softcorp.UserServicePromiseClient.prototype.liveness =
+proto.Softcorp.UserServicePromiseClient.prototype.heartbeat =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/Softcorp.UserService/Liveness',
+      '/Softcorp.UserService/Heartbeat',
       request,
       metadata || {},
-      methodDescriptor_UserService_Liveness);
+      methodDescriptor_UserService_Heartbeat);
 };
 
 

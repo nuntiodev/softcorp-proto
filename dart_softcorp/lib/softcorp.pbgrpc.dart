@@ -14,8 +14,8 @@ import 'softcorp.pb.dart' as $0;
 export 'softcorp.pb.dart';
 
 class UserServiceClient extends $grpc.Client {
-  static final _$liveness = $grpc.ClientMethod<$0.Request, $0.Response>(
-      '/Softcorp.UserService/Liveness',
+  static final _$heartbeat = $grpc.ClientMethod<$0.Request, $0.Response>(
+      '/Softcorp.UserService/Heartbeat',
       ($0.Request value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Response.fromBuffer(value));
   static final _$create = $grpc.ClientMethod<$0.UserRequest, $0.UserResponse>(
@@ -70,9 +70,9 @@ class UserServiceClient extends $grpc.Client {
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.Response> liveness($0.Request request,
+  $grpc.ResponseFuture<$0.Response> heartbeat($0.Request request,
       {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$liveness, request, options: options);
+    return $createUnaryCall(_$heartbeat, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.UserResponse> create($0.UserRequest request,
@@ -132,8 +132,8 @@ abstract class UserServiceBase extends $grpc.Service {
 
   UserServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.Request, $0.Response>(
-        'Liveness',
-        liveness_Pre,
+        'Heartbeat',
+        heartbeat_Pre,
         false,
         false,
         ($core.List<$core.int> value) => $0.Request.fromBuffer(value),
@@ -210,9 +210,9 @@ abstract class UserServiceBase extends $grpc.Service {
         ($0.UserResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.Response> liveness_Pre(
+  $async.Future<$0.Response> heartbeat_Pre(
       $grpc.ServiceCall call, $async.Future<$0.Request> request) async {
-    return liveness(call, await request);
+    return heartbeat(call, await request);
   }
 
   $async.Future<$0.UserResponse> create_Pre(
@@ -265,7 +265,7 @@ abstract class UserServiceBase extends $grpc.Service {
     return deleteNamespace(call, await request);
   }
 
-  $async.Future<$0.Response> liveness(
+  $async.Future<$0.Response> heartbeat(
       $grpc.ServiceCall call, $0.Request request);
   $async.Future<$0.UserResponse> create(
       $grpc.ServiceCall call, $0.UserRequest request);

@@ -18,7 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserServiceClient interface {
-	Liveness(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
+	Heartbeat(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error)
 	Create(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdatePassword(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
 	UpdateEmail(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*UserResponse, error)
@@ -39,9 +39,9 @@ func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
 	return &userServiceClient{cc}
 }
 
-func (c *userServiceClient) Liveness(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
+func (c *userServiceClient) Heartbeat(ctx context.Context, in *Request, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
-	err := c.cc.Invoke(ctx, "/Softcorp.UserService/Liveness", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/Softcorp.UserService/Heartbeat", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -142,7 +142,7 @@ func (c *userServiceClient) DeleteNamespace(ctx context.Context, in *UserRequest
 // All implementations should embed UnimplementedUserServiceServer
 // for forward compatibility
 type UserServiceServer interface {
-	Liveness(context.Context, *Request) (*Response, error)
+	Heartbeat(context.Context, *Request) (*Response, error)
 	Create(context.Context, *UserRequest) (*UserResponse, error)
 	UpdatePassword(context.Context, *UserRequest) (*UserResponse, error)
 	UpdateEmail(context.Context, *UserRequest) (*UserResponse, error)
@@ -159,8 +159,8 @@ type UserServiceServer interface {
 type UnimplementedUserServiceServer struct {
 }
 
-func (UnimplementedUserServiceServer) Liveness(context.Context, *Request) (*Response, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Liveness not implemented")
+func (UnimplementedUserServiceServer) Heartbeat(context.Context, *Request) (*Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Heartbeat not implemented")
 }
 func (UnimplementedUserServiceServer) Create(context.Context, *UserRequest) (*UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
@@ -204,20 +204,20 @@ func RegisterUserServiceServer(s grpc.ServiceRegistrar, srv UserServiceServer) {
 	s.RegisterService(&UserService_ServiceDesc, srv)
 }
 
-func _UserService_Liveness_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_Heartbeat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).Liveness(ctx, in)
+		return srv.(UserServiceServer).Heartbeat(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Softcorp.UserService/Liveness",
+		FullMethod: "/Softcorp.UserService/Heartbeat",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).Liveness(ctx, req.(*Request))
+		return srv.(UserServiceServer).Heartbeat(ctx, req.(*Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -410,8 +410,8 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*UserServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Liveness",
-			Handler:    _UserService_Liveness_Handler,
+			MethodName: "Heartbeat",
+			Handler:    _UserService_Heartbeat_Handler,
 		},
 		{
 			MethodName: "Create",
