@@ -7,7 +7,7 @@ option go_package = "./go_softcorp";
 import "google/protobuf/timestamp.proto";
 
 service UserService {
-    rpc Liveness(Request) returns (Response) {}
+    rpc Heartbeat(Request) returns (Response) {}
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}
     rpc UpdateEmail(UserRequest) returns (UserResponse) {}
