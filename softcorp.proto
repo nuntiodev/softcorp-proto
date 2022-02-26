@@ -30,16 +30,17 @@ enum Gender {
 message User {
     string id = 1;
     string namespace = 2;
-    string name = 3;
-    string email = 4;
-    string password = 5;
-    Gender gender = 6;
-    string country = 7;
-    string image = 8;
-    bool blocked = 9;
-    google.protobuf.Timestamp birthdate = 10;
-	google.protobuf.Timestamp createdAt = 11;
-    google.protobuf.Timestamp updatedAt = 12;
+    string role = 3;
+    string name = 4;
+    string email = 5;
+    string password = 6;
+    Gender gender = 7;
+    string country = 8;
+    string image = 9;
+    bool blocked = 10;
+    google.protobuf.Timestamp birthdate = 11;
+	google.protobuf.Timestamp createdAt = 12;
+    google.protobuf.Timestamp updatedAt = 13;
 }
 
 message UserRequest {
