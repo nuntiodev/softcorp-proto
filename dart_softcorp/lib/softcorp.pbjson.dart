@@ -27,21 +27,22 @@ const User$json = const {
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     const {'1': 'namespace', '3': 2, '4': 1, '5': 9, '10': 'namespace'},
-    const {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
-    const {'1': 'password', '3': 5, '4': 1, '5': 9, '10': 'password'},
-    const {'1': 'gender', '3': 6, '4': 1, '5': 14, '6': '.Softcorp.Gender', '10': 'gender'},
-    const {'1': 'country', '3': 7, '4': 1, '5': 9, '10': 'country'},
-    const {'1': 'image', '3': 8, '4': 1, '5': 9, '10': 'image'},
-    const {'1': 'blocked', '3': 9, '4': 1, '5': 8, '10': 'blocked'},
-    const {'1': 'birthdate', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
-    const {'1': 'createdAt', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
-    const {'1': 'updatedAt', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
+    const {'1': 'role', '3': 3, '4': 1, '5': 9, '10': 'role'},
+    const {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'email', '3': 5, '4': 1, '5': 9, '10': 'email'},
+    const {'1': 'password', '3': 6, '4': 1, '5': 9, '10': 'password'},
+    const {'1': 'gender', '3': 7, '4': 1, '5': 14, '6': '.Softcorp.Gender', '10': 'gender'},
+    const {'1': 'country', '3': 8, '4': 1, '5': 9, '10': 'country'},
+    const {'1': 'image', '3': 9, '4': 1, '5': 9, '10': 'image'},
+    const {'1': 'blocked', '3': 10, '4': 1, '5': 8, '10': 'blocked'},
+    const {'1': 'birthdate', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'birthdate'},
+    const {'1': 'createdAt', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createdAt'},
+    const {'1': 'updatedAt', '3': 13, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updatedAt'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIcCgluYW1lc3BhY2UYAiABKAlSCW5hbWVzcGFjZRISCgRuYW1lGAMgASgJUgRuYW1lEhQKBWVtYWlsGAQgASgJUgVlbWFpbBIaCghwYXNzd29yZBgFIAEoCVIIcGFzc3dvcmQSKAoGZ2VuZGVyGAYgASgOMhAuU29mdGNvcnAuR2VuZGVyUgZnZW5kZXISGAoHY291bnRyeRgHIAEoCVIHY291bnRyeRIUCgVpbWFnZRgIIAEoCVIFaW1hZ2USGAoHYmxvY2tlZBgJIAEoCFIHYmxvY2tlZBI4CgliaXJ0aGRhdGUYCiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgliaXJ0aGRhdGUSOAoJY3JlYXRlZEF0GAsgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0EjgKCXVwZGF0ZWRBdBgMIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCXVwZGF0ZWRBdA==');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIcCgluYW1lc3BhY2UYAiABKAlSCW5hbWVzcGFjZRISCgRyb2xlGAMgASgJUgRyb2xlEhIKBG5hbWUYBCABKAlSBG5hbWUSFAoFZW1haWwYBSABKAlSBWVtYWlsEhoKCHBhc3N3b3JkGAYgASgJUghwYXNzd29yZBIoCgZnZW5kZXIYByABKA4yEC5Tb2Z0Y29ycC5HZW5kZXJSBmdlbmRlchIYCgdjb3VudHJ5GAggASgJUgdjb3VudHJ5EhQKBWltYWdlGAkgASgJUgVpbWFnZRIYCgdibG9ja2VkGAogASgIUgdibG9ja2VkEjgKCWJpcnRoZGF0ZRgLIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCWJpcnRoZGF0ZRI4CgljcmVhdGVkQXQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQSOAoJdXBkYXRlZEF0GA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJdXBkYXRlZEF0');
 @$core.Deprecated('Use userRequestDescriptor instead')
 const UserRequest$json = const {
   '1': 'UserRequest',

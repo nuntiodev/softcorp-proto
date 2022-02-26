@@ -192,13 +192,14 @@ proto.Softcorp.User.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    gender: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    country: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    image: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    blocked: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    role: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    password: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    gender: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    country: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    image: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    blocked: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
     birthdate: (f = msg.getBirthdate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     createdat: (f = msg.getCreatedat()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
     updatedat: (f = msg.getUpdatedat()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f)
@@ -248,43 +249,47 @@ proto.Softcorp.User.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setRole(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
+      msg.setName(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPassword(value);
+      msg.setEmail(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 7:
       var value = /** @type {!proto.Softcorp.Gender} */ (reader.readEnum());
       msg.setGender(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setCountry(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setImage(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setBlocked(value);
-      break;
-    case 10:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setBirthdate(value);
       break;
     case 11:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setCreatedat(value);
+      msg.setBirthdate(value);
       break;
     case 12:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.setCreatedat(value);
+      break;
+    case 13:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setUpdatedat(value);
@@ -332,64 +337,63 @@ proto.Softcorp.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getName();
+  f = message.getRole();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getEmail();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getPassword();
+  f = message.getEmail();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
+  f = message.getPassword();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
   f = message.getGender();
   if (f !== 0.0) {
     writer.writeEnum(
-      6,
+      7,
       f
     );
   }
   f = message.getCountry();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      8,
       f
     );
   }
   f = message.getImage();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      9,
       f
     );
   }
   f = message.getBlocked();
   if (f) {
     writer.writeBool(
-      9,
+      10,
       f
     );
   }
   f = message.getBirthdate();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = message.getCreatedat();
   if (f != null) {
     writer.writeMessage(
       11,
@@ -397,10 +401,18 @@ proto.Softcorp.User.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
-  f = message.getUpdatedat();
+  f = message.getCreatedat();
   if (f != null) {
     writer.writeMessage(
       12,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpdatedat();
+  if (f != null) {
+    writer.writeMessage(
+      13,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -445,10 +457,10 @@ proto.Softcorp.User.prototype.setNamespace = function(value) {
 
 
 /**
- * optional string name = 3;
+ * optional string role = 3;
  * @return {string}
  */
-proto.Softcorp.User.prototype.getName = function() {
+proto.Softcorp.User.prototype.getRole = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -457,16 +469,16 @@ proto.Softcorp.User.prototype.getName = function() {
  * @param {string} value
  * @return {!proto.Softcorp.User} returns this
  */
-proto.Softcorp.User.prototype.setName = function(value) {
+proto.Softcorp.User.prototype.setRole = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string email = 4;
+ * optional string name = 4;
  * @return {string}
  */
-proto.Softcorp.User.prototype.getEmail = function() {
+proto.Softcorp.User.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -475,16 +487,16 @@ proto.Softcorp.User.prototype.getEmail = function() {
  * @param {string} value
  * @return {!proto.Softcorp.User} returns this
  */
-proto.Softcorp.User.prototype.setEmail = function(value) {
+proto.Softcorp.User.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string password = 5;
+ * optional string email = 5;
  * @return {string}
  */
-proto.Softcorp.User.prototype.getPassword = function() {
+proto.Softcorp.User.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -493,17 +505,35 @@ proto.Softcorp.User.prototype.getPassword = function() {
  * @param {string} value
  * @return {!proto.Softcorp.User} returns this
  */
-proto.Softcorp.User.prototype.setPassword = function(value) {
+proto.Softcorp.User.prototype.setEmail = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional Gender gender = 6;
+ * optional string password = 6;
+ * @return {string}
+ */
+proto.Softcorp.User.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Softcorp.User} returns this
+ */
+proto.Softcorp.User.prototype.setPassword = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional Gender gender = 7;
  * @return {!proto.Softcorp.Gender}
  */
 proto.Softcorp.User.prototype.getGender = function() {
-  return /** @type {!proto.Softcorp.Gender} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {!proto.Softcorp.Gender} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -512,33 +542,15 @@ proto.Softcorp.User.prototype.getGender = function() {
  * @return {!proto.Softcorp.User} returns this
  */
 proto.Softcorp.User.prototype.setGender = function(value) {
-  return jspb.Message.setProto3EnumField(this, 6, value);
+  return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
 /**
- * optional string country = 7;
+ * optional string country = 8;
  * @return {string}
  */
 proto.Softcorp.User.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.Softcorp.User} returns this
- */
-proto.Softcorp.User.prototype.setCountry = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional string image = 8;
- * @return {string}
- */
-proto.Softcorp.User.prototype.getImage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -547,17 +559,35 @@ proto.Softcorp.User.prototype.getImage = function() {
  * @param {string} value
  * @return {!proto.Softcorp.User} returns this
  */
-proto.Softcorp.User.prototype.setImage = function(value) {
+proto.Softcorp.User.prototype.setCountry = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional bool blocked = 9;
+ * optional string image = 9;
+ * @return {string}
+ */
+proto.Softcorp.User.prototype.getImage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.Softcorp.User} returns this
+ */
+proto.Softcorp.User.prototype.setImage = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional bool blocked = 10;
  * @return {boolean}
  */
 proto.Softcorp.User.prototype.getBlocked = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
@@ -566,17 +596,17 @@ proto.Softcorp.User.prototype.getBlocked = function() {
  * @return {!proto.Softcorp.User} returns this
  */
 proto.Softcorp.User.prototype.setBlocked = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 9, value);
+  return jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional google.protobuf.Timestamp birthdate = 10;
+ * optional google.protobuf.Timestamp birthdate = 11;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.Softcorp.User.prototype.getBirthdate = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
 };
 
 
@@ -585,7 +615,7 @@ proto.Softcorp.User.prototype.getBirthdate = function() {
  * @return {!proto.Softcorp.User} returns this
 */
 proto.Softcorp.User.prototype.setBirthdate = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -603,17 +633,17 @@ proto.Softcorp.User.prototype.clearBirthdate = function() {
  * @return {boolean}
  */
 proto.Softcorp.User.prototype.hasBirthdate = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp createdAt = 11;
+ * optional google.protobuf.Timestamp createdAt = 12;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.Softcorp.User.prototype.getCreatedat = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 11));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
 };
 
 
@@ -622,7 +652,7 @@ proto.Softcorp.User.prototype.getCreatedat = function() {
  * @return {!proto.Softcorp.User} returns this
 */
 proto.Softcorp.User.prototype.setCreatedat = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -640,17 +670,17 @@ proto.Softcorp.User.prototype.clearCreatedat = function() {
  * @return {boolean}
  */
 proto.Softcorp.User.prototype.hasCreatedat = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp updatedAt = 12;
+ * optional google.protobuf.Timestamp updatedAt = 13;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.Softcorp.User.prototype.getUpdatedat = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 12));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 13));
 };
 
 
@@ -659,7 +689,7 @@ proto.Softcorp.User.prototype.getUpdatedat = function() {
  * @return {!proto.Softcorp.User} returns this
 */
 proto.Softcorp.User.prototype.setUpdatedat = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -677,7 +707,7 @@ proto.Softcorp.User.prototype.clearUpdatedat = function() {
  * @return {boolean}
  */
 proto.Softcorp.User.prototype.hasUpdatedat = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
