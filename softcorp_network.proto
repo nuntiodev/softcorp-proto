@@ -16,12 +16,23 @@ service NetworkService {
 
 message NetworkServiceRequest {
     Connection connection = 1;
-    bool accept = 2;
-    string userId = 3;
+    ConnectionQuery query = 2;
+    bool accept = 3;
 }
 
 message NetworkServiceResponse {
     Connection connection = 1;
+}
+
+message ConnectionQuery {
+    enum Filter {
+        ALL = 1;
+        ONLY_ACCEPTED = 2;
+        ONLY_NOT_ACCEPTED = 3;
+    }
+    string userId = 1;
+    string namespace = 2;
+    Filter filter = 3;
 }
 
 message Connection {
