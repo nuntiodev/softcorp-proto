@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package SoftcorpNetwork;
 
-option go_package = "./go_softcorp/network";
+option go_package = "./go_softcorp/softcorp_network";
 
 import "google/protobuf/timestamp.proto";
 
