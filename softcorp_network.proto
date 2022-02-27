@@ -26,9 +26,9 @@ message NetworkServiceResponse {
 
 message ConnectionQuery {
     enum Filter {
-        ALL = 1;
-        ONLY_ACCEPTED = 2;
-        ONLY_NOT_ACCEPTED = 3;
+        ALL = 0;
+        ONLY_ACCEPTED = 1;
+        ONLY_NOT_ACCEPTED = 2;
     }
     string userId = 1;
     string namespace = 2;
