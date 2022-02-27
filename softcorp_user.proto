@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package SoftcorpUser;
 
-option go_package = "./go_softcorp/user";
+option go_package = "./go_softcorp/softcorp_user";
 
 import "google/protobuf/timestamp.proto";
 

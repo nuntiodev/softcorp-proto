@@ -4,7 +4,7 @@ build-user-go-proto:
 	
 .PHONY: build-user-js-proto
 build-user-js-proto:
-	protoc -I. softcorp_user.proto --js_out=import_style=commonjs:./js_softcorp/user --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./js_softcorp/user
+	protoc -I. softcorp_user.proto --js_out=import_style=commonjs:./js_softcorp/softcorp_user --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./js_softcorp/softcorp_user
 
 .PHONY: build-network-go-proto
 build-network-go-proto:
@@ -12,7 +12,7 @@ build-network-go-proto:
 	
 .PHONY: build-network-js-proto
 build-network-js-proto:
-	protoc -I. softcorp_network.proto --js_out=import_style=commonjs:./js_softcorp/network --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./js_softcorp/network
+	protoc -I. softcorp_network.proto --js_out=import_style=commonjs:./js_softcorp/softcorp_network --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./js_softcorp/softcorp_network
 
 .PHONY: build-proto
 build-proto:
