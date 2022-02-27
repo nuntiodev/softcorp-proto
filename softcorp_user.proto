@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package Softcorp;
+package SoftcorpUser;
 
-option go_package = "./go_softcorp";
+option go_package = "./go_softcorp/user";
 
 import "google/protobuf/timestamp.proto";
 
-service UserService {
+service Service {
     rpc Heartbeat(Request) returns (Response) {}
     rpc Create(UserRequest) returns (UserResponse) {}
     rpc UpdatePassword(UserRequest) returns (UserResponse) {}

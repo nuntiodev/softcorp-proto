@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package SoftcorpNetwork;
+
+option go_package = "./go_softcorp/network";
+
+import "google/protobuf/timestamp.proto";
+
+service NetworkService {
+    rpc Heartbeat(Request) returns (Response) {}
+    rpc AddUser(AddUserRequest) returns (NetworkServiceResponse) {}
+    rpc Accept(AddUserRequest) returns (NetworkServiceResponse) {}
+}
+
+message NetworkServiceRequest {
+    Connection connection = 1;
+}
+
+message NetworkServiceResponse {
+    Connection connection = 1;
+}
+
+message Connection {
+    string idFrom = 1;
+    string idTo = 2;
+    bool accepted = 3;
+    google.protobuf.Timestamp sendAt = 4;
+    google.protobuf.Timestamp acceptedAt = 5;
+}
+
+message Request {}
+
+message Response {
+    string msg = 1;
+}
